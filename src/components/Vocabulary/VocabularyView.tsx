@@ -191,19 +191,19 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
           </div>
 
           {/* Sort & Grouping Controls */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             {/* Sort Select */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', background: 'var(--bg-input)', padding: '0.35rem 0.75rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-subtle)', fontSize: '0.85rem' }}>
-              <ListFilter size={15} color="var(--text-muted)" />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', background: 'var(--bg-surface-low)', padding: '0.25rem 0.6rem', borderRadius: 'var(--radius-xs)', border: '1px solid var(--border-subtle)', fontSize: '0.8rem' }}>
+              <ListFilter size={14} color="var(--text-muted)" />
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as SortOption)}
-                style={{ background: 'transparent', border: 'none', color: 'var(--text-primary)', outline: 'none', cursor: 'pointer', fontSize: '0.85rem' }}
+                style={{ background: 'transparent', border: 'none', color: 'var(--text-primary)', outline: 'none', cursor: 'pointer', fontSize: '0.8rem' }}
               >
-                <option value="newest" style={{ background: '#1e293b' }}>Newest Added</option>
-                <option value="alphabetical" style={{ background: '#1e293b' }}>Alphabetical (A-Z)</option>
-                <option value="next_review" style={{ background: '#1e293b' }}>Next Review Date</option>
-                <option value="difficulty" style={{ background: '#1e293b' }}>Difficulty Level</option>
+                <option value="newest" style={{ background: '#121212' }}>Newest Added</option>
+                <option value="alphabetical" style={{ background: '#121212' }}>Alphabetical (A-Z)</option>
+                <option value="next_review" style={{ background: '#121212' }}>Next Review Date</option>
+                <option value="difficulty" style={{ background: '#121212' }}>Difficulty Level</option>
               </select>
             </div>
 
@@ -214,14 +214,14 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
                 onClick={() => setViewMode('grouped')}
                 title="Group by Date Added"
               >
-                <Calendar size={15} />
+                <Calendar size={14} />
               </button>
               <button
                 className={`filter-tab ${viewMode === 'grid' ? 'active' : ''}`}
                 onClick={() => setViewMode('grid')}
                 title="Grid View"
               >
-                <LayoutGrid size={15} />
+                <LayoutGrid size={14} />
               </button>
             </div>
           </div>
@@ -231,16 +231,20 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
       {/* Words Content */}
       {loading ? (
         <div style={{ textAlign: 'center', padding: '4rem 0', color: 'var(--text-muted)' }}>
-          Loading your vocabulary...
+          Loading vocabulary vault...
         </div>
       ) : filteredWords.length === 0 ? (
-        <div className="glass-card" style={{ textAlign: 'center', padding: '4rem 2rem' }}>
-          <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🔍</div>
-          <h3 style={{ fontSize: '1.4rem', marginBottom: '0.5rem' }}>No words match your filter</h3>
-          <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.95rem' }}>
+        <div className="glass-card" style={{ textAlign: 'center', padding: '3.5rem 1.5rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
+            <div style={{ width: '40px', height: '40px', borderRadius: 'var(--radius-xs)', background: 'var(--bg-surface-high)', color: 'var(--text-muted)', border: '1px solid var(--border-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Search size={20} />
+            </div>
+          </div>
+          <h3 style={{ fontSize: '1.2rem', marginBottom: '0.35rem' }}>No words match your filter</h3>
+          <p style={{ color: 'var(--text-secondary)', marginBottom: '1.25rem', fontSize: '0.875rem' }}>
             {searchQuery
-              ? `No vocabulary matching "${searchQuery}". Try a different keyword.`
-              : 'Add new words or adjust your filters to see vocabulary items.'}
+              ? `No vocabulary matching "${searchQuery}". Try a different term.`
+              : 'Add new words or adjust your status filters.'}
           </p>
           {searchQuery && (
             <button className="btn btn-secondary" onClick={() => setSearchQuery('')}>
@@ -250,16 +254,16 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
         </div>
       ) : viewMode === 'grouped' ? (
         // Date Grouped View (Today, Yesterday, Date)
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           {groupedByDate.map((group) => (
             <div key={group.dateKey}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-                <h3 style={{ fontSize: '1.15rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                  <Calendar size={16} color="var(--accent-primary)" />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
+                <h3 style={{ fontSize: '0.95rem', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                  <Calendar size={14} color="var(--text-muted)" />
                   <span>{group.label}</span>
                 </h3>
-                <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', background: 'var(--bg-input)', padding: '0.15rem 0.6rem', borderRadius: 'var(--radius-full)' }}>
-                  {group.words.length} word{group.words.length === 1 ? '' : 's'}
+                <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', background: 'var(--bg-surface-low)', padding: '0.1rem 0.45rem', borderRadius: 'var(--radius-xs)', border: '1px solid var(--border-subtle)', fontFamily: 'var(--font-mono)' }}>
+                  {group.words.length}
                 </span>
               </div>
 

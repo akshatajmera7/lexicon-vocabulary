@@ -174,55 +174,55 @@ tenacious`}
             </h3>
 
             {!isProcessing && (
-              <div style={{ display: 'flex', gap: '0.75rem', fontSize: '0.85rem' }}>
+              <div style={{ display: 'flex', gap: '0.6rem', fontSize: '0.75rem', fontFamily: 'var(--font-mono)' }}>
                 {doneCount > 0 && (
-                  <span style={{ color: 'var(--success)', fontWeight: 600 }}>
-                    ✓ {doneCount} added
+                  <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>
+                    [{doneCount} added]
                   </span>
                 )}
                 {duplicateCount > 0 && (
-                  <span style={{ color: 'var(--warning)', fontWeight: 600 }}>
-                    ⚠ {duplicateCount} already existed
+                  <span style={{ color: 'var(--text-muted)', fontWeight: 600 }}>
+                    [{duplicateCount} existed]
                   </span>
                 )}
                 {errorCount > 0 && (
-                  <span style={{ color: 'var(--danger)', fontWeight: 600 }}>
-                    ❌ {errorCount} failed
+                  <span style={{ color: 'var(--text-muted)', fontWeight: 600 }}>
+                    [{errorCount} failed]
                   </span>
                 )}
               </div>
             )}
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
             {batchItems.map((item) => (
               <div key={item.id} className="batch-item-row">
                 <div className="batch-item-left">
-                  {item.status === 'processing' && <Loader2 size={18} className="status-icon-proc" />}
-                  {item.status === 'done' && <CheckCircle size={18} className="status-icon-done" />}
-                  {item.status === 'duplicate' && <AlertCircle size={18} className="status-icon-duplicate" />}
-                  {item.status === 'error' && <AlertCircle size={18} className="status-icon-error" />}
-                  {item.status === 'pending' && <Clock size={18} color="var(--text-muted)" />}
+                  {item.status === 'processing' && <Loader2 size={15} className="status-icon-proc" />}
+                  {item.status === 'done' && <CheckCircle size={15} color="var(--text-primary)" />}
+                  {item.status === 'duplicate' && <AlertCircle size={15} color="var(--text-muted)" />}
+                  {item.status === 'error' && <AlertCircle size={15} color="var(--text-muted)" />}
+                  {item.status === 'pending' && <Clock size={15} color="var(--text-muted)" />}
 
                   <span style={{ textTransform: 'capitalize' }}>{item.rawInput}</span>
                 </div>
 
-                <div style={{ fontSize: '0.85rem' }}>
-                  {item.status === 'processing' && <span style={{ color: 'var(--accent-primary)' }}>Looking up meaning...</span>}
-                  {item.status === 'done' && <span style={{ color: 'var(--success)' }}>Added to vocabulary</span>}
-                  {item.status === 'duplicate' && <span style={{ color: 'var(--warning)' }}>Already in your vocabulary</span>}
-                  {item.status === 'error' && <span style={{ color: 'var(--danger)' }}>{item.error || 'Failed'}</span>}
-                  {item.status === 'pending' && <span style={{ color: 'var(--text-muted)' }}>Waiting...</span>}
+                <div style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)' }}>
+                  {item.status === 'processing' && <span style={{ color: 'var(--text-secondary)' }}>enriching...</span>}
+                  {item.status === 'done' && <span style={{ color: 'var(--text-primary)' }}>saved</span>}
+                  {item.status === 'duplicate' && <span style={{ color: 'var(--text-muted)' }}>already exists</span>}
+                  {item.status === 'error' && <span style={{ color: 'var(--text-muted)' }}>{item.error || 'failed'}</span>}
+                  {item.status === 'pending' && <span style={{ color: 'var(--text-muted)' }}>queued</span>}
                 </div>
               </div>
             ))}
           </div>
 
           {!isProcessing && completedResults.length > 0 && (
-            <div style={{ marginTop: '1.25rem', display: 'flex', justifyContent: 'flex-end' }}>
+            <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'flex-end' }}>
               <button className="btn btn-primary" onClick={onWordAddedNavToLibrary}>
                 <span>View in Library</span>
-                <ArrowRight size={16} />
+                <ArrowRight size={15} />
               </button>
             </div>
           )}
@@ -232,22 +232,22 @@ tenacious`}
       {/* Live Preview of Newly Added Word Cards */}
       {completedResults.length > 0 && (
         <div style={{ marginTop: '1rem' }}>
-          <h3 style={{ fontSize: '1.1rem', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <Sparkles size={18} color="var(--accent-primary)" />
-            <span>Enriched Vocabulary Previews</span>
+          <h3 style={{ fontSize: '1rem', marginBottom: '0.65rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+            <Sparkles size={16} color="var(--text-primary)" />
+            <span>Added Word Previews</span>
           </h3>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '0.75rem' }}>
             {completedResults.map((w) => (
               <div
                 key={w.id}
                 className="glass-card"
-                style={{ padding: '1.25rem', cursor: 'pointer' }}
+                style={{ padding: '1rem', cursor: 'pointer' }}
                 onClick={() => onSelectWord(w)}
               >
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <h4 style={{ fontSize: '1.25rem' }}>{w.word}</h4>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                    <h4 style={{ fontSize: '1.1rem' }}>{w.word}</h4>
                     {w.part_of_speech && <span className="badge badge-pos">{w.part_of_speech}</span>}
                   </div>
                   <button
@@ -258,23 +258,23 @@ tenacious`}
                     }}
                     title="Pronounce"
                   >
-                    <Volume2 size={15} />
+                    <Volume2 size={14} />
                   </button>
                 </div>
 
-                <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '0.75rem' }}>
+                <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '0.6rem' }}>
                   {w.simple_meaning}
                 </p>
 
                 {w.example_sentence && (
-                  <p style={{ fontSize: '0.85rem', fontStyle: 'italic', color: 'var(--text-muted)', borderLeft: '2px solid var(--accent-primary)', paddingLeft: '0.5rem' }}>
+                  <p style={{ fontSize: '0.8rem', fontStyle: 'italic', color: 'var(--text-muted)', borderLeft: '2px solid var(--border-hover)', paddingLeft: '0.5rem' }}>
                     "{w.example_sentence}"
                   </p>
                 )}
 
                 {w.memory_tip && (
-                  <div style={{ marginTop: '0.75rem', fontSize: '0.8rem', background: 'rgba(99, 102, 241, 0.08)', padding: '0.5rem 0.75rem', borderRadius: 'var(--radius-sm)', color: '#818cf8' }}>
-                    💡 <strong>Memory tip:</strong> {w.memory_tip}
+                  <div style={{ marginTop: '0.6rem', fontSize: '0.775rem', background: 'var(--bg-surface-high)', border: '1px solid var(--border-subtle)', padding: '0.45rem 0.65rem', borderRadius: 'var(--radius-xs)', color: 'var(--text-secondary)' }}>
+                    <strong>Memory aid:</strong> {w.memory_tip}
                   </div>
                 )}
               </div>

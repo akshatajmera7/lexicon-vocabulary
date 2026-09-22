@@ -70,18 +70,18 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
 
         <form onSubmit={handleSave} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           {/* AI Providers Section */}
-          <div style={{ background: 'var(--bg-input)', padding: '1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-subtle)' }}>
-            <h3 style={{ fontSize: '1.05rem', marginBottom: '0.35rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <Sparkles size={17} color="var(--accent-primary)" />
+          <div style={{ background: 'var(--bg-surface-low)', padding: '1.15rem', borderRadius: 'var(--radius-xs)', border: '1px solid var(--border-subtle)' }}>
+            <h3 style={{ fontSize: '1rem', marginBottom: '0.35rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+              <Sparkles size={16} color="var(--text-primary)" />
               <span>Vocabulary Enrichment & AI Providers</span>
             </h3>
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-              Free Dictionary API works out of the box with zero setup. You can also plug in OpenRouter (supports free models), Gemini, or custom LLMs for richer memory tips.
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
+              Free Dictionary API works out of the box with zero setup. You can also connect OpenRouter (with free zero-cost models), Google Gemini, or custom LLMs.
             </p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-muted)', marginBottom: '0.3rem' }}>
+                <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', marginBottom: '0.25rem', fontFamily: 'var(--font-mono)' }}>
                   Preferred Provider Mode
                 </label>
                 <select
@@ -94,25 +94,26 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                   }
                   style={{
                     width: '100%',
-                    padding: '0.6rem',
-                    background: 'var(--bg-secondary)',
+                    padding: '0.55rem 0.75rem',
+                    background: 'var(--bg-input)',
                     border: '1px solid var(--border-subtle)',
-                    borderRadius: 'var(--radius-sm)',
+                    borderRadius: 'var(--radius-xs)',
                     color: 'var(--text-primary)',
                     outline: 'none',
+                    fontSize: '0.825rem',
                   }}
                 >
-                  <option value="auto">Auto / Hybrid (Dictionary API + AI Enrichment)</option>
-                  <option value="openrouter">OpenRouter AI (Free / Paid Models)</option>
-                  <option value="gemini">Google Gemini AI</option>
-                  <option value="openai">Custom OpenAI / Kimi LLM</option>
-                  <option value="dictionary">Dictionary API Only (No AI)</option>
+                  <option value="auto" style={{ background: '#121212' }}>Auto / Hybrid (Dictionary API + AI Enrichment)</option>
+                  <option value="openrouter" style={{ background: '#121212' }}>OpenRouter AI (Free / Paid Models)</option>
+                  <option value="gemini" style={{ background: '#121212' }}>Google Gemini AI</option>
+                  <option value="openai" style={{ background: '#121212' }}>Custom OpenAI / Kimi LLM</option>
+                  <option value="dictionary" style={{ background: '#121212' }}>Dictionary API Only (No AI)</option>
                 </select>
               </div>
 
               {/* OpenRouter Configuration */}
               <div>
-                <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-muted)', marginBottom: '0.3rem' }}>
+                <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', marginBottom: '0.25rem', fontFamily: 'var(--font-mono)' }}>
                   OpenRouter API Key (Optional — Free models available)
                 </label>
                 <input
@@ -124,18 +125,19 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                   }
                   style={{
                     width: '100%',
-                    padding: '0.6rem',
-                    background: 'var(--bg-secondary)',
+                    padding: '0.55rem 0.75rem',
+                    background: 'var(--bg-input)',
                     border: '1px solid var(--border-subtle)',
-                    borderRadius: 'var(--radius-sm)',
+                    borderRadius: 'var(--radius-xs)',
                     color: 'var(--text-primary)',
                     outline: 'none',
+                    fontSize: '0.825rem',
                   }}
                 />
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-muted)', marginBottom: '0.3rem' }}>
+                <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', marginBottom: '0.25rem', fontFamily: 'var(--font-mono)' }}>
                   OpenRouter Model
                 </label>
                 <select
@@ -148,27 +150,28 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                   }
                   style={{
                     width: '100%',
-                    padding: '0.6rem',
-                    background: 'var(--bg-secondary)',
+                    padding: '0.55rem 0.75rem',
+                    background: 'var(--bg-input)',
                     border: '1px solid var(--border-subtle)',
-                    borderRadius: 'var(--radius-sm)',
+                    borderRadius: 'var(--radius-xs)',
                     color: 'var(--text-primary)',
                     outline: 'none',
+                    fontSize: '0.825rem',
                   }}
                 >
                   {FREE_OPENROUTER_MODELS.map((m) => (
-                    <option key={m.id} value={m.id}>
+                    <option key={m.id} value={m.id} style={{ background: '#121212' }}>
                       {m.name}
                     </option>
                   ))}
-                  <option value="openai/gpt-4o-mini">OpenAI GPT-4o Mini</option>
-                  <option value="anthropic/claude-3.5-haiku">Claude 3.5 Haiku</option>
+                  <option value="openai/gpt-4o-mini" style={{ background: '#121212' }}>OpenAI GPT-4o Mini</option>
+                  <option value="anthropic/claude-3.5-haiku" style={{ background: '#121212' }}>Claude 3.5 Haiku</option>
                 </select>
               </div>
 
               {/* Google Gemini */}
               <div>
-                <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-muted)', marginBottom: '0.3rem' }}>
+                <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', marginBottom: '0.25rem', fontFamily: 'var(--font-mono)' }}>
                   Google Gemini API Key (Optional)
                 </label>
                 <input
@@ -180,12 +183,13 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                   }
                   style={{
                     width: '100%',
-                    padding: '0.6rem',
-                    background: 'var(--bg-secondary)',
+                    padding: '0.55rem 0.75rem',
+                    background: 'var(--bg-input)',
                     border: '1px solid var(--border-subtle)',
-                    borderRadius: 'var(--radius-sm)',
+                    borderRadius: 'var(--radius-xs)',
                     color: 'var(--text-primary)',
                     outline: 'none',
+                    fontSize: '0.825rem',
                   }}
                 />
               </div>
@@ -193,18 +197,18 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
           </div>
 
           {/* Supabase Connection */}
-          <div style={{ background: 'var(--bg-input)', padding: '1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-subtle)' }}>
-            <h3 style={{ fontSize: '1.05rem', marginBottom: '0.35rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <Database size={17} color="var(--success)" />
+          <div style={{ background: 'var(--bg-surface-low)', padding: '1.15rem', borderRadius: 'var(--radius-xs)', border: '1px solid var(--border-subtle)' }}>
+            <h3 style={{ fontSize: '1rem', marginBottom: '0.35rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+              <Database size={16} color="var(--text-primary)" />
               <span>Supabase Cloud Database</span>
             </h3>
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
               Currently connected to PostgreSQL project with Row Level Security and active sync.
             </p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-muted)', marginBottom: '0.3rem' }}>
+                <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', marginBottom: '0.25rem', fontFamily: 'var(--font-mono)' }}>
                   Supabase Project URL
                 </label>
                 <input
@@ -216,18 +220,19 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                   }
                   style={{
                     width: '100%',
-                    padding: '0.6rem',
-                    background: 'var(--bg-secondary)',
+                    padding: '0.55rem 0.75rem',
+                    background: 'var(--bg-input)',
                     border: '1px solid var(--border-subtle)',
-                    borderRadius: 'var(--radius-sm)',
+                    borderRadius: 'var(--radius-xs)',
                     color: 'var(--text-primary)',
                     outline: 'none',
+                    fontSize: '0.825rem',
                   }}
                 />
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-muted)', marginBottom: '0.3rem' }}>
+                <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', marginBottom: '0.25rem', fontFamily: 'var(--font-mono)' }}>
                   Supabase Anon Key
                 </label>
                 <input
@@ -239,12 +244,13 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                   }
                   style={{
                     width: '100%',
-                    padding: '0.6rem',
-                    background: 'var(--bg-secondary)',
+                    padding: '0.55rem 0.75rem',
+                    background: 'var(--bg-input)',
                     border: '1px solid var(--border-subtle)',
-                    borderRadius: 'var(--radius-sm)',
+                    borderRadius: 'var(--radius-xs)',
                     color: 'var(--text-primary)',
                     outline: 'none',
+                    fontSize: '0.825rem',
                   }}
                 />
               </div>

@@ -4,36 +4,25 @@
   --font-body: 'Inter', var(--font-sans);
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* Lexicon Precision - Linear / Raycast Slate Dark Mode */
-  --bg-canvas: #090d16;
-  --bg-surface-low: #0e131f;
-  --bg-surface-mid: #151b28;
-  --bg-surface-high: #1c2436;
-  --bg-surface-glass: rgba(21, 27, 40, 0.75);
-  --bg-input: #0e131f;
+  /* Strict Black & White Minimalist Tokens */
+  --bg-canvas: #000000;
+  --bg-surface-low: #0a0a0a;
+  --bg-surface-mid: #121212;
+  --bg-surface-high: #1c1c1c;
+  --bg-surface-glass: rgba(0, 0, 0, 0.92);
+  --bg-input: #0e0e0e;
 
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.16);
-  --border-focus: rgba(99, 102, 241, 0.6);
+  --border-subtle: #222222;
+  --border-hover: #3d3d3d;
+  --border-focus: #ffffff;
 
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+  --text-muted: #525252;
 
-  /* Accents */
-  --accent-primary: #6366f1;
-  --accent-primary-hover: #4f46e5;
-  --accent-primary-glow: rgba(99, 102, 241, 0.22);
-  --accent-primary-light: #818cf8;
-
-  --accent-amber: #f59e0b;
-  --accent-amber-glow: rgba(245, 158, 11, 0.2);
-
-  --accent-emerald: #10b981;
-  --accent-emerald-glow: rgba(16, 185, 129, 0.2);
-
-  --accent-crimson: #ef4444;
-  --accent-crimson-glow: rgba(239, 68, 68, 0.2);
+  --accent-primary: #ffffff;
+  --accent-primary-hover: #e5e5e5;
+  --accent-primary-text: #000000;
 
   --radius-xs: 4px;
   --radius-sm: 6px;
@@ -42,29 +31,33 @@
   --radius-xl: 16px;
   --radius-full: 9999px;
 
-  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  --shadow-glow-indigo: 0 0 0 1px rgba(99, 102, 241, 0.4), 0 0 20px -4px rgba(99, 102, 241, 0.25);
-  --shadow-modal: 0 20px 48px -8px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.9);
+  --shadow-modal: 0 20px 48px rgba(0, 0, 0, 0.95), 0 0 0 1px #222222;
 }
 
-/* Light Theme Transition Override */
+/* Light Mode (Crisp High-Contrast Monochrome) */
 [data-theme='light'] {
-  --bg-canvas: #f8fafc;
-  --bg-surface-low: #f1f5f9;
+  --bg-canvas: #ffffff;
+  --bg-surface-low: #fafafa;
   --bg-surface-mid: #ffffff;
-  --bg-surface-high: #f8fafc;
-  --bg-surface-glass: rgba(255, 255, 255, 0.9);
-  --bg-input: #ffffff;
+  --bg-surface-high: #f4f4f4;
+  --bg-surface-glass: rgba(255, 255, 255, 0.95);
+  --bg-input: #f4f4f4;
 
-  --border-subtle: rgba(0, 0, 0, 0.08);
-  --border-hover: rgba(0, 0, 0, 0.16);
-  --border-focus: rgba(99, 102, 241, 0.6);
+  --border-subtle: #e5e5e5;
+  --border-hover: #a3a3a3;
+  --border-focus: #000000;
 
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #94a3b8;
+  --text-primary: #000000;
+  --text-secondary: #525252;
+  --text-muted: #8a8a8a;
 
-  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  --accent-primary: #000000;
+  --accent-primary-hover: #171717;
+  --accent-primary-text: #ffffff;
+
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-modal: 0 20px 48px rgba(0, 0, 0, 0.12), 0 0 0 1px #e5e5e5;
 }
 
 /* Base Styles */
@@ -87,16 +80,16 @@ html, body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: -0.025em;
+  font-weight: 600;
+  letter-spacing: -0.03em;
 }
 
-/* Ergonomic Mobile-First Container */
+/* Container */
 .app-container {
   max-width: 480px;
   margin: 0 auto;
   padding: 0 1rem 5.5rem;
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 65px);
 }
 
 @media (min-width: 768px) {
@@ -108,97 +101,93 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 1024px) {
   .app-container {
-    max-width: 880px;
+    max-width: 860px;
   }
 }
 
-/* Precision Glass Card */
+/* Minimalist Card */
 .glass-card {
   background: var(--bg-surface-mid);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
-  padding: 1.35rem;
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
   box-shadow: var(--shadow-card);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: border-color 0.15s ease;
 }
 
 .glass-card:hover {
   border-color: var(--border-hover);
 }
 
-/* Badges & Chips */
+/* Strict Monochrome Badges */
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  padding: 0.15rem 0.55rem;
-  border-radius: var(--radius-sm);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-xs);
   font-size: 0.6875rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  font-family: var(--font-body);
+  font-family: var(--font-mono);
+  background: var(--bg-surface-high);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
 }
 
 .badge-pos {
-  background: rgba(99, 102, 241, 0.1);
-  color: #818cf8;
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  background: var(--bg-surface-high);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
 }
 
 .badge-learning {
-  background: rgba(245, 158, 11, 0.1);
-  color: #fbbf24;
-  border: 1px solid rgba(245, 158, 11, 0.2);
+  background: var(--bg-surface-high);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
 }
 
 .badge-learned {
-  background: rgba(16, 185, 129, 0.1);
-  color: #34d399;
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  background: var(--text-primary);
+  color: var(--bg-canvas);
+  border: 1px solid var(--text-primary);
 }
 
 .badge-due {
-  background: rgba(239, 68, 68, 0.12);
-  color: #f87171;
-  border: 1px solid rgba(239, 68, 68, 0.25);
+  background: var(--text-primary);
+  color: var(--bg-canvas);
+  border: 1px solid var(--text-primary);
 }
 
-.badge-diff-easy {
-  background: rgba(16, 185, 129, 0.08);
-  color: #34d399;
-}
-.badge-diff-medium {
-  background: rgba(245, 158, 11, 0.08);
-  color: #fbbf24;
-}
+.badge-diff-easy,
+.badge-diff-medium,
 .badge-diff-hard {
-  background: rgba(239, 68, 68, 0.08);
-  color: #f87171;
+  background: var(--bg-surface-high);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
 }
 
-/* Micro-KBD Keycap Chips */
+/* Keycap Chips */
 .code-kbd {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 600;
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--bg-surface-high);
   color: var(--text-secondary);
-  padding: 0.15rem 0.4rem;
+  padding: 0.15rem 0.35rem;
   border-radius: var(--radius-xs);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-subtle);
 }
 
 /* Animations */
-@keyframes slideUpFade {
-  from { opacity: 0; transform: translateY(8px); }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(2px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in {
-  animation: slideUpFade 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeIn 0.15s ease forwards;
 }
 
 @keyframes spin {

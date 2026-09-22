@@ -116,15 +116,15 @@ export const WordDetailModal: React.FC<WordDetailModalProps> = ({
 
           {/* Synonyms & Antonyms */}
           {((word.synonyms && word.synonyms.length > 0) || (word.antonyms && word.antonyms.length > 0)) && (
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
               {word.synonyms && word.synonyms.length > 0 && (
                 <div>
-                  <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 700, marginBottom: '0.35rem' }}>
+                  <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 700, marginBottom: '0.35rem', fontFamily: 'var(--font-mono)' }}>
                     Synonyms
                   </div>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
                     {word.synonyms.map((s) => (
-                      <span key={s} style={{ background: 'rgba(255, 255, 255, 0.06)', padding: '0.2rem 0.5rem', borderRadius: 'var(--radius-sm)', fontSize: '0.8rem' }}>
+                      <span key={s} style={{ background: 'var(--bg-surface-low)', border: '1px solid var(--border-subtle)', padding: '0.15rem 0.45rem', borderRadius: 'var(--radius-xs)', fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
                         {s}
                       </span>
                     ))}
@@ -134,12 +134,12 @@ export const WordDetailModal: React.FC<WordDetailModalProps> = ({
 
               {word.antonyms && word.antonyms.length > 0 && (
                 <div>
-                  <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 700, marginBottom: '0.35rem' }}>
+                  <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 700, marginBottom: '0.35rem', fontFamily: 'var(--font-mono)' }}>
                     Antonyms
                   </div>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
                     {word.antonyms.map((a) => (
-                      <span key={a} style={{ background: 'rgba(239, 68, 68, 0.08)', color: '#f87171', padding: '0.2rem 0.5rem', borderRadius: 'var(--radius-sm)', fontSize: '0.8rem' }}>
+                      <span key={a} style={{ background: 'var(--bg-surface-low)', border: '1px solid var(--border-subtle)', padding: '0.15rem 0.45rem', borderRadius: 'var(--radius-xs)', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
                         {a}
                       </span>
                     ))}
@@ -151,9 +151,9 @@ export const WordDetailModal: React.FC<WordDetailModalProps> = ({
 
           {/* Memory Tip */}
           {word.memory_tip && (
-            <div style={{ background: 'rgba(99, 102, 241, 0.08)', border: '1px solid rgba(99, 102, 241, 0.25)', borderRadius: 'var(--radius-md)', padding: '0.85rem 1rem', color: '#818cf8', fontSize: '0.9rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontWeight: 700, marginBottom: '0.2rem' }}>
-                <Lightbulb size={16} />
+            <div style={{ background: 'var(--bg-surface-high)', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-xs)', padding: '0.75rem 0.85rem', color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontWeight: 700, marginBottom: '0.2rem', color: 'var(--text-primary)' }}>
+                <Lightbulb size={14} />
                 <span>Memory Tip</span>
               </div>
               <p>{word.memory_tip}</p>
@@ -162,46 +162,46 @@ export const WordDetailModal: React.FC<WordDetailModalProps> = ({
         </div>
 
         {/* Learning & Spaced Repetition Stats */}
-        <div style={{ background: 'var(--bg-input)', borderRadius: 'var(--radius-md)', padding: '1.25rem', marginBottom: '1.5rem', border: '1px solid var(--border-subtle)' }}>
-          <h4 style={{ fontSize: '0.9rem', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '0.75rem', letterSpacing: '0.04em' }}>
+        <div style={{ background: 'var(--bg-surface-low)', borderRadius: 'var(--radius-xs)', padding: '1.15rem', marginBottom: '1.25rem', border: '1px solid var(--border-subtle)' }}>
+          <h4 style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '0.75rem', letterSpacing: '0.04em', fontFamily: 'var(--font-mono)' }}>
             Spaced Repetition Stats
           </h4>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem', textAlign: 'center', marginBottom: '1rem' }}>
-            <div style={{ background: 'rgba(0, 0, 0, 0.2)', padding: '0.6rem', borderRadius: 'var(--radius-sm)' }}>
-              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Interval</div>
-              <div style={{ fontSize: '1.1rem', fontWeight: 700 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.5rem', textAlign: 'center', marginBottom: '0.85rem' }}>
+            <div style={{ background: 'var(--bg-surface-high)', padding: '0.55rem', borderRadius: 'var(--radius-xs)', border: '1px solid var(--border-subtle)' }}>
+              <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>Interval</div>
+              <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-primary)' }}>
                 {formatInterval(progress?.interval_days || 0)}
               </div>
             </div>
 
-            <div style={{ background: 'rgba(0, 0, 0, 0.2)', padding: '0.6rem', borderRadius: 'var(--radius-sm)' }}>
-              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Repetitions</div>
-              <div style={{ fontSize: '1.1rem', fontWeight: 700 }}>{progress?.repetition_count || 0}</div>
+            <div style={{ background: 'var(--bg-surface-high)', padding: '0.55rem', borderRadius: 'var(--radius-xs)', border: '1px solid var(--border-subtle)' }}>
+              <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>Reps</div>
+              <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-primary)' }}>{progress?.repetition_count || 0}</div>
             </div>
 
-            <div style={{ background: 'rgba(0, 0, 0, 0.2)', padding: '0.6rem', borderRadius: 'var(--radius-sm)' }}>
-              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Ease Factor</div>
-              <div style={{ fontSize: '1.1rem', fontWeight: 700 }}>
+            <div style={{ background: 'var(--bg-surface-high)', padding: '0.55rem', borderRadius: 'var(--radius-xs)', border: '1px solid var(--border-subtle)' }}>
+              <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>Factor</div>
+              <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-primary)' }}>
                 {(progress?.ease_factor || 2.5).toFixed(2)}
               </div>
             </div>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem', fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <span>Added:</span>
               <strong style={{ color: 'var(--text-primary)' }}>{addedDate}</strong>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <span>Next Review:</span>
-              <strong style={{ color: 'var(--accent-primary)' }}>{nextReviewDate}</strong>
+              <strong style={{ color: 'var(--text-primary)' }}>{nextReviewDate}</strong>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <span>Reviews:</span>
               <span>
-                <strong style={{ color: 'var(--success)' }}>{progress?.correct_count || 0} correct</strong>,{' '}
-                <strong style={{ color: 'var(--danger)' }}>{progress?.incorrect_count || 0} incorrect</strong>
+                <strong style={{ color: 'var(--text-primary)' }}>{progress?.correct_count || 0} correct</strong>,{' '}
+                <strong style={{ color: 'var(--text-muted)' }}>{progress?.incorrect_count || 0} incorrect</strong>
               </span>
             </div>
           </div>
@@ -209,13 +209,13 @@ export const WordDetailModal: React.FC<WordDetailModalProps> = ({
 
         {/* Review History Timeline */}
         {history.length > 0 && (
-          <div style={{ marginBottom: '1.5rem' }}>
-            <h4 style={{ fontSize: '0.85rem', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-              <History size={14} />
+          <div style={{ marginBottom: '1.25rem' }}>
+            <h4 style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '0.6rem', display: 'flex', alignItems: 'center', gap: '0.4rem', fontFamily: 'var(--font-mono)' }}>
+              <History size={13} />
               <span>Review History ({history.length})</span>
             </h4>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', maxHeight: '160px', overflowY: 'auto' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem', maxHeight: '140px', overflowY: 'auto' }}>
               {history.map((h) => {
                 const dateStr = new Date(h.reviewed_at).toLocaleDateString(undefined, {
                   month: 'short',
@@ -228,23 +228,24 @@ export const WordDetailModal: React.FC<WordDetailModalProps> = ({
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',
-                      padding: '0.5rem 0.75rem',
-                      background: 'rgba(0, 0, 0, 0.15)',
-                      borderRadius: 'var(--radius-sm)',
-                      fontSize: '0.825rem',
+                      padding: '0.45rem 0.65rem',
+                      background: 'var(--bg-surface-low)',
+                      border: '1px solid var(--border-subtle)',
+                      borderRadius: 'var(--radius-xs)',
+                      fontSize: '0.8rem',
                     }}
                   >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
                       {h.was_correct ? (
-                        <CheckCircle2 size={14} color="var(--success)" />
+                        <CheckCircle2 size={14} color="var(--text-primary)" />
                       ) : (
-                        <XCircle size={14} color="var(--danger)" />
+                        <XCircle size={14} color="var(--text-muted)" />
                       )}
                       <span>{dateStr}</span>
-                      <span style={{ textTransform: 'capitalize', fontWeight: 600 }}>({h.rating})</span>
+                      <span style={{ textTransform: 'capitalize', fontWeight: 600, color: 'var(--text-secondary)' }}>({h.rating})</span>
                     </div>
-                    <span style={{ color: 'var(--text-muted)' }}>
-                      Interval: {h.previous_interval}d → {h.new_interval}d
+                    <span style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-mono)', fontSize: '0.75rem' }}>
+                      {h.previous_interval}d → {h.new_interval}d
                     </span>
                   </div>
                 );
@@ -254,13 +255,12 @@ export const WordDetailModal: React.FC<WordDetailModalProps> = ({
         )}
 
         {/* Actions */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid var(--border-subtle)', paddingTop: '1.25rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid var(--border-subtle)', paddingTop: '1rem' }}>
           <button
             className="btn btn-secondary"
-            style={{ color: 'var(--danger)', borderColor: 'rgba(239, 68, 68, 0.2)' }}
             onClick={() => onDeleteRequest(word)}
           >
-            <Trash2 size={16} />
+            <Trash2 size={15} />
             <span>Delete Word</span>
           </button>
 

@@ -22,15 +22,14 @@ export const MobileTabBar: React.FC<MobileTabBarProps> = ({
         left: 0,
         right: 0,
         zIndex: 60,
-        background: 'var(--bg-glass)',
-        backdropFilter: 'blur(24px)',
-        WebkitBackdropFilter: 'blur(24px)',
+        background: 'var(--bg-surface-glass)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
         borderTop: '1px solid var(--border-subtle)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-around',
-        padding: '0.5rem 0.75rem env(safe-area-inset-bottom, 0.5rem)',
-        boxShadow: '0 -4px 20px rgba(0, 0, 0, 0.3)',
+        padding: '0.45rem 0.5rem env(safe-area-inset-bottom, 0.45rem)',
       }}
     >
       <button
@@ -42,16 +41,16 @@ export const MobileTabBar: React.FC<MobileTabBarProps> = ({
           gap: '0.2rem',
           background: 'transparent',
           border: 'none',
-          color: activeTab === 'dashboard' ? 'var(--accent-primary)' : 'var(--text-secondary)',
+          color: activeTab === 'dashboard' ? 'var(--text-primary)' : 'var(--text-muted)',
           cursor: 'pointer',
-          padding: '0.4rem 0.6rem',
-          borderRadius: 'var(--radius-md)',
-          fontSize: '0.725rem',
-          fontWeight: 700,
-          transition: 'all 0.2s ease',
+          padding: '0.35rem 0.5rem',
+          borderRadius: 'var(--radius-xs)',
+          fontSize: '0.7rem',
+          fontWeight: 600,
+          transition: 'color 0.15s ease',
         }}
       >
-        <Compass size={22} />
+        <Compass size={20} />
         <span>Home</span>
       </button>
 
@@ -64,17 +63,17 @@ export const MobileTabBar: React.FC<MobileTabBarProps> = ({
           gap: '0.2rem',
           background: 'transparent',
           border: 'none',
-          color: activeTab === 'add' ? 'var(--accent-primary)' : 'var(--text-secondary)',
+          color: activeTab === 'add' ? 'var(--text-primary)' : 'var(--text-muted)',
           cursor: 'pointer',
-          padding: '0.4rem 0.6rem',
-          borderRadius: 'var(--radius-md)',
-          fontSize: '0.725rem',
-          fontWeight: 700,
-          transition: 'all 0.2s ease',
+          padding: '0.35rem 0.5rem',
+          borderRadius: 'var(--radius-xs)',
+          fontSize: '0.7rem',
+          fontWeight: 600,
+          transition: 'color 0.15s ease',
         }}
       >
-        <PlusCircle size={22} />
-        <span>Add Words</span>
+        <PlusCircle size={20} />
+        <span>Add</span>
       </button>
 
       <button
@@ -87,16 +86,16 @@ export const MobileTabBar: React.FC<MobileTabBarProps> = ({
           gap: '0.2rem',
           background: 'transparent',
           border: 'none',
-          color: activeTab === 'revise' ? 'var(--accent-primary)' : 'var(--text-secondary)',
+          color: activeTab === 'revise' ? 'var(--text-primary)' : 'var(--text-muted)',
           cursor: 'pointer',
-          padding: '0.4rem 0.6rem',
-          borderRadius: 'var(--radius-md)',
-          fontSize: '0.725rem',
-          fontWeight: 700,
-          transition: 'all 0.2s ease',
+          padding: '0.35rem 0.5rem',
+          borderRadius: 'var(--radius-xs)',
+          fontSize: '0.7rem',
+          fontWeight: 600,
+          transition: 'color 0.15s ease',
         }}
       >
-        <BookOpen size={22} />
+        <BookOpen size={20} />
         <span>Revise</span>
         {dueCount > 0 && (
           <span
@@ -104,13 +103,13 @@ export const MobileTabBar: React.FC<MobileTabBarProps> = ({
               position: 'absolute',
               top: '2px',
               right: '8px',
-              background: '#ef4444',
-              color: 'white',
-              borderRadius: '999px',
-              padding: '0.05rem 0.35rem',
-              fontSize: '0.65rem',
+              background: 'var(--text-primary)',
+              color: 'var(--bg-canvas)',
+              borderRadius: 'var(--radius-xs)',
+              padding: '0.05rem 0.3rem',
+              fontSize: '0.625rem',
               fontWeight: 800,
-              boxShadow: '0 2px 6px rgba(239, 68, 68, 0.6)',
+              fontFamily: 'var(--font-mono)',
             }}
           >
             {dueCount}
@@ -127,16 +126,16 @@ export const MobileTabBar: React.FC<MobileTabBarProps> = ({
           gap: '0.2rem',
           background: 'transparent',
           border: 'none',
-          color: activeTab === 'library' ? 'var(--accent-primary)' : 'var(--text-secondary)',
+          color: activeTab === 'library' ? 'var(--text-primary)' : 'var(--text-muted)',
           cursor: 'pointer',
-          padding: '0.4rem 0.6rem',
-          borderRadius: 'var(--radius-md)',
-          fontSize: '0.725rem',
-          fontWeight: 700,
-          transition: 'all 0.2s ease',
+          padding: '0.35rem 0.5rem',
+          borderRadius: 'var(--radius-xs)',
+          fontSize: '0.7rem',
+          fontWeight: 600,
+          transition: 'color 0.15s ease',
         }}
       >
-        <Sparkles size={22} />
+        <Sparkles size={20} />
         <span>Library</span>
       </button>
     </nav>

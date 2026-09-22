@@ -94,10 +94,14 @@ export const RevisionView: React.FC<RevisionViewProps> = ({
     return (
       <div className="revision-layout animate-fade-in" style={{ textAlign: 'center' }}>
         <div className="glass-card" style={{ padding: '3rem 2rem' }}>
-          <div style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>🎉</div>
-          <h1 style={{ fontSize: '2.25rem', marginBottom: '0.5rem' }}>Revision Complete!</h1>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', marginBottom: '2rem' }}>
-            Great work! You've strengthened your memory pathways today.
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.25rem' }}>
+            <div style={{ width: '48px', height: '48px', borderRadius: 'var(--radius-xs)', background: 'var(--text-primary)', color: 'var(--bg-canvas)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <CheckCircle2 size={28} />
+            </div>
+          </div>
+          <h1 style={{ fontSize: '2rem', marginBottom: '0.4rem' }}>Revision Complete</h1>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '2rem' }}>
+            You've completed all scheduled repetitions for this session.
           </p>
 
           {/* Stats Breakdown */}
@@ -105,26 +109,26 @@ export const RevisionView: React.FC<RevisionViewProps> = ({
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: '1rem',
-              maxWidth: '480px',
-              margin: '0 auto 2rem',
+              gap: '0.75rem',
+              maxWidth: '440px',
+              margin: '0 auto 1.75rem',
             }}
           >
-            <div style={{ background: 'var(--bg-input)', padding: '1rem', borderRadius: 'var(--radius-md)' }}>
-              <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Reviewed</div>
-              <div style={{ fontSize: '1.75rem', fontWeight: 800 }}>{sessionStats.totalReviewed}</div>
+            <div style={{ background: 'var(--bg-surface-low)', padding: '0.9rem', borderRadius: 'var(--radius-xs)', border: '1px solid var(--border-subtle)' }}>
+              <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontFamily: 'var(--font-mono)' }}>Reviewed</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--text-primary)' }}>{sessionStats.totalReviewed}</div>
             </div>
 
-            <div style={{ background: 'var(--bg-input)', padding: '1rem', borderRadius: 'var(--radius-md)' }}>
-              <div style={{ fontSize: '0.8rem', color: 'var(--success)' }}>Correct</div>
-              <div style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--success)' }}>
+            <div style={{ background: 'var(--bg-surface-low)', padding: '0.9rem', borderRadius: 'var(--radius-xs)', border: '1px solid var(--border-subtle)' }}>
+              <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontFamily: 'var(--font-mono)' }}>Correct</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--text-primary)' }}>
                 {sessionStats.correctCount}
               </div>
             </div>
 
-            <div style={{ background: 'var(--bg-input)', padding: '1rem', borderRadius: 'var(--radius-md)' }}>
-              <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Accuracy</div>
-              <div style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--accent-primary)' }}>
+            <div style={{ background: 'var(--bg-surface-low)', padding: '0.9rem', borderRadius: 'var(--radius-xs)', border: '1px solid var(--border-subtle)' }}>
+              <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontFamily: 'var(--font-mono)' }}>Accuracy</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--text-primary)' }}>
                 {accuracy}%
               </div>
             </div>
@@ -133,22 +137,25 @@ export const RevisionView: React.FC<RevisionViewProps> = ({
           {/* Recall Ratings Distribution */}
           <div
             style={{
-              background: 'rgba(0, 0, 0, 0.2)',
-              borderRadius: 'var(--radius-md)',
-              padding: '1.25rem',
-              maxWidth: '480px',
-              margin: '0 auto 2rem',
+              background: 'var(--bg-surface-low)',
+              borderRadius: 'var(--radius-xs)',
+              padding: '1rem',
+              maxWidth: '440px',
+              margin: '0 auto 1.75rem',
               border: '1px solid var(--border-subtle)',
             }}
           >
-            <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '0.75rem', fontWeight: 600 }}>
+            <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '0.6rem', fontWeight: 700, textTransform: 'uppercase', fontFamily: 'var(--font-mono)' }}>
               Recall Breakdown
             </div>
-            <div style={{ display: 'flex', justifyContent: 'space-around', fontSize: '0.9rem' }}>
-              <span style={{ color: '#34d399' }}>🟢 {sessionStats.easyCount} Easy</span>
-              <span style={{ color: '#818cf8' }}>🔵 {sessionStats.goodCount} Good</span>
-              <span style={{ color: '#fbbf24' }}>🟡 {sessionStats.hardCount} Hard</span>
-              <span style={{ color: '#f87171' }}>🔴 {sessionStats.forgotCount} Forgot</span>
+            <div style={{ display: 'flex', justifyContent: 'space-around', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+              <span>{sessionStats.easyCount} Easy</span>
+              <span>•</span>
+              <span>{sessionStats.goodCount} Good</span>
+              <span>•</span>
+              <span>{sessionStats.hardCount} Hard</span>
+              <span>•</span>
+              <span>{sessionStats.forgotCount} Forgot</span>
             </div>
           </div>
 
@@ -158,27 +165,28 @@ export const RevisionView: React.FC<RevisionViewProps> = ({
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.5rem',
-              background: 'rgba(99, 102, 241, 0.1)',
-              padding: '0.75rem 1.25rem',
-              borderRadius: 'var(--radius-full)',
-              color: '#818cf8',
-              fontSize: '0.9rem',
-              fontWeight: 600,
-              marginBottom: '2.5rem',
+              background: 'var(--bg-surface-low)',
+              border: '1px solid var(--border-subtle)',
+              padding: '0.6rem 1rem',
+              borderRadius: 'var(--radius-xs)',
+              color: 'var(--text-secondary)',
+              fontSize: '0.825rem',
+              fontFamily: 'var(--font-mono)',
+              marginBottom: '2rem',
             }}
           >
-            <Clock size={16} />
+            <Clock size={14} color="var(--text-muted)" />
             <span>Next review: {nextReviewMsg}</span>
           </div>
 
           {/* Actions */}
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem' }}>
             <button className="btn btn-secondary" onClick={() => onNavigate('dashboard')}>
-              Back to Dashboard
+              Dashboard
             </button>
             <button className="btn btn-primary" onClick={() => onNavigate('library')}>
-              <span>Browse Vocabulary Library</span>
-              <ArrowRight size={16} />
+              <span>Vocabulary Library</span>
+              <ArrowRight size={15} />
             </button>
           </div>
         </div>
@@ -201,40 +209,45 @@ export const RevisionView: React.FC<RevisionViewProps> = ({
 
     return (
       <div className="revision-layout animate-fade-in" style={{ textAlign: 'center' }}>
-        <div className="glass-card" style={{ padding: '4rem 2rem' }}>
-          <div style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>🎉</div>
-          <h1 style={{ fontSize: '2.25rem', marginBottom: '0.5rem' }}>You're all caught up!</h1>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', maxWidth: '440px', margin: '0 auto 1.75rem' }}>
-            There are no words due for revision right now according to your spaced repetition schedule.
+        <div className="glass-card" style={{ padding: '3.5rem 1.5rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.25rem' }}>
+            <div style={{ width: '44px', height: '44px', borderRadius: 'var(--radius-xs)', background: 'var(--bg-surface-high)', color: 'var(--text-primary)', border: '1px solid var(--border-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <BookCheck size={22} />
+            </div>
+          </div>
+          <h1 style={{ fontSize: '1.85rem', marginBottom: '0.4rem' }}>Queue Caught Up</h1>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', maxWidth: '380px', margin: '0 auto 1.5rem', lineHeight: 1.5 }}>
+            No words due for revision right now according to your spaced repetition schedule.
           </p>
 
           <div
             style={{
               display: 'inline-flex',
               flexDirection: 'column',
-              gap: '0.35rem',
-              background: 'var(--bg-input)',
+              gap: '0.25rem',
+              background: 'var(--bg-surface-low)',
               border: '1px solid var(--border-subtle)',
-              padding: '1rem 1.75rem',
-              borderRadius: 'var(--radius-md)',
-              marginBottom: '2.5rem',
+              padding: '0.85rem 1.5rem',
+              borderRadius: 'var(--radius-xs)',
+              marginBottom: '2rem',
+              fontFamily: 'var(--font-mono)',
             }}
           >
-            <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 700 }}>
-              Next Scheduled Revision
+            <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 700 }}>
+              Next Scheduled Review
             </span>
-            <span style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--accent-primary)' }}>
+            <span style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-primary)' }}>
               {nextReviewText}
             </span>
           </div>
 
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem' }}>
             <button className="btn btn-secondary" onClick={() => onNavigate('dashboard')}>
               Dashboard
             </button>
             <button className="btn btn-primary" onClick={() => onNavigate('library')}>
-              <BookCheck size={18} />
-              <span>Explore Vocabulary Library</span>
+              <BookCheck size={16} />
+              <span>Vocabulary Library</span>
             </button>
           </div>
         </div>
@@ -256,14 +269,14 @@ export const RevisionView: React.FC<RevisionViewProps> = ({
           onClick={() => onNavigate('dashboard')}
           title="Exit Revision Session"
         >
-          <ArrowLeft size={18} />
+          <ArrowLeft size={16} />
         </button>
 
         <div className="progress-track">
           <div className="progress-fill" style={{ width: `${progressPercent}%` }} />
         </div>
 
-        <span style={{ fontSize: '0.875rem', fontWeight: 700, color: 'var(--text-secondary)' }}>
+        <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>
           {currentIndex + 1} / {totalDueCount}
         </span>
       </div>
@@ -279,14 +292,14 @@ export const RevisionView: React.FC<RevisionViewProps> = ({
               onClick={() => speakWord(currentMCQ.word)}
               title="Pronounce"
             >
-              <Volume2 size={18} />
+              <Volume2 size={16} />
             </button>
           </div>
 
           {/* Phonetic & Part of Speech */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.6rem', marginBottom: '1.25rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', marginBottom: '1.15rem' }}>
             {currentMCQ.phonetic && (
-              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.9rem', color: 'var(--text-muted)' }}>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
                 {currentMCQ.phonetic}
               </span>
             )}
@@ -322,7 +335,7 @@ export const RevisionView: React.FC<RevisionViewProps> = ({
                   <div className="mcq-option-badge">{optionLetter}</div>
                   <span style={{ flex: 1 }}>{option.text}</span>
                   {!isAnswerRevealed && (
-                    <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
+                    <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
                       [{idx + 1}]
                     </span>
                   )}
@@ -333,39 +346,39 @@ export const RevisionView: React.FC<RevisionViewProps> = ({
 
           {/* Answer Feedback & Detail Reveal */}
           {isAnswerRevealed && (
-            <div className={`feedback-box animate-fade-in ${isSelectedCorrect ? 'correct' : 'incorrect'}`}>
+            <div className="feedback-box animate-fade-in">
               <div className="feedback-title">
                 {isSelectedCorrect ? (
                   <>
-                    <CheckCircle2 size={20} className="feedback-correct" />
-                    <span className="feedback-correct">Correct!</span>
+                    <CheckCircle2 size={18} color="var(--text-primary)" />
+                    <span style={{ color: 'var(--text-primary)' }}>Correct</span>
                   </>
                 ) : (
                   <>
-                    <XCircle size={20} className="feedback-incorrect" />
-                    <span className="feedback-incorrect">Incorrect</span>
+                    <XCircle size={18} color="var(--text-muted)" />
+                    <span style={{ color: 'var(--text-muted)' }}>Incorrect</span>
                   </>
                 )}
               </div>
 
               {/* Detailed Explanation */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginTop: '0.75rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '0.65rem' }}>
                 <div>
-                  <strong style={{ color: 'var(--text-primary)', fontSize: '0.95rem' }}>Meaning: </strong>
-                  <span style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
+                  <strong style={{ color: 'var(--text-primary)', fontSize: '0.9rem' }}>Meaning: </strong>
+                  <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
                     {currentMCQ.detailedMeaning || currentMCQ.correctMeaning}
                   </span>
                 </div>
 
                 {currentMCQ.exampleSentence && (
-                  <div style={{ fontStyle: 'italic', color: 'var(--text-muted)', fontSize: '0.9rem', borderLeft: '2px solid var(--accent-primary)', paddingLeft: '0.6rem' }}>
+                  <div style={{ fontStyle: 'italic', color: 'var(--text-muted)', fontSize: '0.85rem', borderLeft: '2px solid var(--border-hover)', paddingLeft: '0.5rem' }}>
                     "{currentMCQ.exampleSentence}"
                   </div>
                 )}
 
                 {currentMCQ.memoryTip && (
-                  <div style={{ background: 'rgba(99, 102, 241, 0.08)', padding: '0.6rem 0.8rem', borderRadius: 'var(--radius-sm)', color: '#818cf8', fontSize: '0.85rem' }}>
-                    💡 <strong>Memory tip:</strong> {currentMCQ.memoryTip}
+                  <div style={{ background: 'var(--bg-surface-high)', border: '1px solid var(--border-subtle)', padding: '0.6rem 0.75rem', borderRadius: 'var(--radius-xs)', color: 'var(--text-secondary)', fontSize: '0.825rem' }}>
+                    <strong>Memory aid:</strong> {currentMCQ.memoryTip}
                   </div>
                 )}
               </div>
