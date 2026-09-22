@@ -15,10 +15,14 @@ export interface SessionStats {
   easyCount: number;
 }
 
+export type RevisionMode = 'due' | 'practice';
+
 export function useRevision() {
   const [loading, setLoading] = useState<boolean>(true);
-  const [dueWords, setDueWords] = useState<WordWithProgress[]>([]);
+  const [mode, setMode] = useState<RevisionMode>('due');
+  const [activeWords, setActiveWords] = useState<WordWithProgress[]>([]);
   const [allWords, setAllWords] = useState<WordWithProgress[]>([]);
+  const [dueCount, setDueCount] = useState<number>(0);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [currentMCQ, setCurrentMCQ] = useState<MCQQuestion | null>(null);
   const [selectedOptionId, setSelectedOptionId] = useState<string | null>(null);
@@ -37,18 +41,10 @@ export function useRevision() {
     easyCount: 0,
   });
 
-  const initSession = useCallback(async () => {
-    setLoading(true);
-    try {
-      const [due, all, upcoming] = await Promise.all([
-        RevisionService.getDueWords(),
-        VocabularyService.getWords(),
-        RevisionService.getNextUpcomingReview(),
-      ]);
-
-      setDueWords(due);
-      setAllWords(all);
-      setNextUpcomingReview(upcoming);
+  const startSessionWithWords = useCallback(
+    (wordsToReview: WordWithProgress[], allLibraryWords: WordWithProgress[], sessionMode: RevisionMode) => {
+      setMode(sessionMode);
+      setActiveWords(wordsToReview);
       setCurrentIndex(0);
       setSelectedOptionId(null);
       setIsAnswerRevealed(false);
@@ -63,22 +59,66 @@ export function useRevision() {
         easyCount: 0,
       });
 
-      if (due.length > 0) {
-        const firstMCQ = generateMCQ(due[0], all);
+      if (wordsToReview.length > 0) {
+        const firstMCQ = generateMCQ(wordsToReview[0], allLibraryWords);
         setCurrentMCQ(firstMCQ);
       } else {
         setCurrentMCQ(null);
       }
-    } catch (err) {
-      console.error('Failed to initialize revision session:', err);
+    },
+    []
+  );
+
+  const initSession = useCallback(
+    async (preferredMode: RevisionMode = 'due') => {
+      setLoading(true);
+      try {
+        const [due, all, upcoming] = await Promise.all([
+          RevisionService.getDueWords(),
+          VocabularyService.getWords(),
+          RevisionService.getNextUpcomingReview(),
+        ]);
+
+        setAllWords(all);
+        setDueCount(due.length);
+        setNextUpcomingReview(upcoming);
+
+        if (preferredMode === 'practice' || (preferredMode === 'due' && due.length === 0 && all.length > 0)) {
+          // Shuffle all words for practice
+          const shuffled = [...all].sort(() => Math.random() - 0.5);
+          startSessionWithWords(shuffled, all, preferredMode === 'practice' ? 'practice' : 'due');
+        } else {
+          startSessionWithWords(due, all, 'due');
+        }
+      } catch (err) {
+        console.error('Failed to initialize revision session:', err);
+      } finally {
+        setLoading(false);
+      }
+    },
+    [startSessionWithWords]
+  );
+
+  useEffect(() => {
+    initSession('due');
+  }, [initSession]);
+
+  const startPracticeMode = useCallback(() => {
+    if (allWords.length === 0) return;
+    const shuffled = [...allWords].sort(() => Math.random() - 0.5);
+    startSessionWithWords(shuffled, allWords, 'practice');
+  }, [allWords, startSessionWithWords]);
+
+  const startDueMode = useCallback(async () => {
+    setLoading(true);
+    try {
+      const due = await RevisionService.getDueWords();
+      setDueCount(due.length);
+      startSessionWithWords(due, allWords, 'due');
     } finally {
       setLoading(false);
     }
-  }, []);
-
-  useEffect(() => {
-    initSession();
-  }, [initSession]);
+  }, [allWords, startSessionWithWords]);
 
   const selectOption = useCallback(
     (optionId: string) => {
@@ -93,7 +133,7 @@ export function useRevision() {
     async (rating: RecallRating) => {
       if (!currentMCQ || isSubmittingRating) return;
 
-      const currentWord = dueWords[currentIndex];
+      const currentWord = activeWords[currentIndex];
       const selectedOption = currentMCQ.options.find((o) => o.id === selectedOptionId);
       const wasCorrect = selectedOption?.isCorrect ?? false;
 
@@ -115,8 +155,8 @@ export function useRevision() {
 
         // Check if there is a next word
         const nextIdx = currentIndex + 1;
-        if (nextIdx < dueWords.length) {
-          const nextWord = dueWords[nextIdx];
+        if (nextIdx < activeWords.length) {
+          const nextWord = activeWords[nextIdx];
           const nextMCQ = generateMCQ(nextWord, allWords);
 
           setCurrentIndex(nextIdx);
@@ -126,19 +166,17 @@ export function useRevision() {
         } else {
           // Session Completed!
           setIsSessionComplete(true);
-          // Fetch updated next review info
           const upcoming = await RevisionService.getNextUpcomingReview();
           setNextUpcomingReview(upcoming);
 
-          // Confetti celebration
           try {
             confetti({
-              particleCount: 100,
-              spread: 70,
+              particleCount: 80,
+              spread: 60,
               origin: { y: 0.6 },
             });
           } catch (_e) {
-            // Ignore if canvas confetti isn't supported in test env
+            // Ignore if canvas confetti isn't supported
           }
         }
       } catch (err) {
@@ -147,15 +185,19 @@ export function useRevision() {
         setIsSubmittingRating(false);
       }
     },
-    [currentMCQ, isSubmittingRating, dueWords, currentIndex, selectedOptionId, allWords]
+    [currentMCQ, isSubmittingRating, activeWords, currentIndex, selectedOptionId, allWords]
   );
 
   return {
     loading,
-    dueWords,
-    totalDueCount: dueWords.length,
+    mode,
+    activeWords,
+    dueWords: activeWords,
+    totalDueCount: dueCount,
+    totalSessionWords: activeWords.length,
+    allWordsCount: allWords.length,
     currentIndex,
-    currentWord: dueWords[currentIndex] as WordWithProgress | undefined,
+    currentWord: activeWords[currentIndex] as WordWithProgress | undefined,
     currentMCQ,
     selectedOptionId,
     isAnswerRevealed,
@@ -165,6 +207,8 @@ export function useRevision() {
     nextUpcomingReview,
     selectOption,
     submitRating,
-    restartSession: initSession,
+    startPracticeMode,
+    startDueMode,
+    restartSession: () => (mode === 'practice' ? startPracticeMode() : initSession('due')),
   };
 }

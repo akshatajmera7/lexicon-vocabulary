@@ -3,8 +3,11 @@ import {
   ArrowLeft,
   ArrowRight,
   BookCheck,
+  BookOpen,
   CheckCircle2,
   Clock,
+  RotateCcw,
+  Sparkles,
   Volume2,
   XCircle,
 } from 'lucide-react';
@@ -23,7 +26,10 @@ export const RevisionView: React.FC<RevisionViewProps> = ({
 }) => {
   const {
     loading,
+    mode,
     totalDueCount,
+    totalSessionWords,
+    allWordsCount,
     currentIndex,
     currentMCQ,
     selectedOptionId,
@@ -34,6 +40,9 @@ export const RevisionView: React.FC<RevisionViewProps> = ({
     nextUpcomingReview,
     selectOption,
     submitRating,
+    startPracticeMode,
+    startDueMode,
+    restartSession,
   } = useRevision();
 
   // Keyboard shortcut listener for MCQ options (1-4, A-D) and Recall ratings (1-4)
@@ -68,7 +77,7 @@ export const RevisionView: React.FC<RevisionViewProps> = ({
   if (loading) {
     return (
       <div style={{ textAlign: 'center', padding: '5rem 0', color: 'var(--text-secondary)' }}>
-        <p>Loading your revision queue...</p>
+        <p>Loading flashcards and revision queue...</p>
       </div>
     );
   }
@@ -99,9 +108,13 @@ export const RevisionView: React.FC<RevisionViewProps> = ({
               <CheckCircle2 size={28} />
             </div>
           </div>
-          <h1 style={{ fontSize: '2rem', marginBottom: '0.4rem' }}>Revision Complete</h1>
+          <h1 style={{ fontSize: '2rem', marginBottom: '0.4rem' }}>
+            {mode === 'practice' ? 'Practice Round Complete!' : 'Revision Complete!'}
+          </h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '2rem' }}>
-            You've completed all scheduled repetitions for this session.
+            {mode === 'practice'
+              ? `You reviewed ${sessionStats.totalReviewed} vocabulary flashcards in unlimited practice mode.`
+              : "You've completed all scheduled repetitions for this session."}
           </p>
 
           {/* Stats Breakdown */}
@@ -180,12 +193,16 @@ export const RevisionView: React.FC<RevisionViewProps> = ({
           </div>
 
           {/* Actions */}
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.75rem' }}>
+            <button className="btn btn-primary" onClick={restartSession}>
+              <RotateCcw size={15} />
+              <span>Practice Again (Shuffle)</span>
+            </button>
             <button className="btn btn-secondary" onClick={() => onNavigate('dashboard')}>
               Dashboard
             </button>
-            <button className="btn btn-primary" onClick={() => onNavigate('library')}>
-              <span>Vocabulary Library</span>
+            <button className="btn btn-secondary" onClick={() => onNavigate('library')}>
+              <span>Vault</span>
               <ArrowRight size={15} />
             </button>
           </div>
@@ -194,8 +211,8 @@ export const RevisionView: React.FC<RevisionViewProps> = ({
     );
   }
 
-  // 2. All Caught Up Screen (No Words Due)
-  if (totalDueCount === 0) {
+  // 2. All Caught Up Screen (No Words Due & Not in Practice Mode)
+  if (totalSessionWords === 0) {
     let nextReviewText = 'Tomorrow at 9:00 AM';
     if (nextUpcomingReview?.nextReviewAt) {
       const d = new Date(nextUpcomingReview.nextReviewAt);
@@ -215,10 +232,23 @@ export const RevisionView: React.FC<RevisionViewProps> = ({
               <BookCheck size={22} />
             </div>
           </div>
-          <h1 style={{ fontSize: '1.85rem', marginBottom: '0.4rem' }}>Queue Caught Up</h1>
+          <h1 style={{ fontSize: '1.85rem', marginBottom: '0.4rem' }}>Due Queue Caught Up</h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', maxWidth: '380px', margin: '0 auto 1.5rem', lineHeight: 1.5 }}>
-            No words due for revision right now according to your spaced repetition schedule.
+            No words due for scheduled spaced repetition. You can still practice unlimited flashcards anytime!
           </p>
+
+          {allWordsCount > 0 && (
+            <div style={{ marginBottom: '2rem' }}>
+              <button
+                className="btn btn-primary"
+                style={{ padding: '0.75rem 1.5rem', fontSize: '0.95rem' }}
+                onClick={startPracticeMode}
+              >
+                <Sparkles size={16} />
+                <span>Practice All {allWordsCount} Words (Unlimited Mode)</span>
+              </button>
+            </div>
+          )}
 
           <div
             style={{
@@ -234,7 +264,7 @@ export const RevisionView: React.FC<RevisionViewProps> = ({
             }}
           >
             <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 700 }}>
-              Next Scheduled Review
+              Next Scheduled Spaced Review
             </span>
             <span style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-primary)' }}>
               {nextReviewText}
@@ -245,9 +275,9 @@ export const RevisionView: React.FC<RevisionViewProps> = ({
             <button className="btn btn-secondary" onClick={() => onNavigate('dashboard')}>
               Dashboard
             </button>
-            <button className="btn btn-primary" onClick={() => onNavigate('library')}>
-              <BookCheck size={16} />
-              <span>Vocabulary Library</span>
+            <button className="btn btn-secondary" onClick={() => onNavigate('library')}>
+              <BookOpen size={15} />
+              <span>Library</span>
             </button>
           </div>
         </div>
@@ -256,12 +286,42 @@ export const RevisionView: React.FC<RevisionViewProps> = ({
   }
 
   // 3. Active MCQ Revision Card
-  const progressPercent = Math.round(((currentIndex + 1) / totalDueCount) * 100);
+  const progressPercent = Math.round(((currentIndex + 1) / totalSessionWords) * 100);
   const selectedOption = currentMCQ?.options.find((o) => o.id === selectedOptionId);
   const isSelectedCorrect = selectedOption?.isCorrect ?? false;
 
   return (
     <div className="revision-layout animate-fade-in">
+      {/* Mode Switcher & Session Controls */}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.25rem' }}>
+        <div className="filter-tabs">
+          <button
+            className={`filter-tab ${mode === 'due' ? 'active' : ''}`}
+            onClick={startDueMode}
+            title="Spaced Repetition Due Queue"
+          >
+            <span>Due ({totalDueCount})</span>
+          </button>
+          <button
+            className={`filter-tab ${mode === 'practice' ? 'active' : ''}`}
+            onClick={startPracticeMode}
+            title="Unlimited Practice Across All Library Words"
+          >
+            <span>Practice All ({allWordsCount})</span>
+          </button>
+        </div>
+
+        <button
+          className="btn btn-secondary"
+          style={{ padding: '0.2rem 0.55rem', fontSize: '0.75rem', minHeight: '28px' }}
+          onClick={restartSession}
+          title="Reshuffle & Restart"
+        >
+          <RotateCcw size={12} />
+          <span>Reshuffle</span>
+        </button>
+      </div>
+
       {/* Header with Progress Bar */}
       <div className="revision-header">
         <button
@@ -277,7 +337,7 @@ export const RevisionView: React.FC<RevisionViewProps> = ({
         </div>
 
         <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>
-          {currentIndex + 1} / {totalDueCount}
+          {currentIndex + 1} / {totalSessionWords}
         </span>
       </div>
 

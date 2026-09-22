@@ -2,11 +2,11 @@ import { normalizeWord } from '../../utils/wordNormalizer';
 import { EnrichmentResult, IVocabularyProvider, ProviderOptions } from './types';
 
 export const FREE_OPENROUTER_MODELS = [
-  { id: 'google/gemini-2.0-flash-thinking-exp:free', name: 'Gemini 2.0 Flash Thinking (Free)' },
-  { id: 'google/gemini-2.0-flash-exp:free', name: 'Gemini 2.0 Flash (Free)' },
+  { id: 'liquid/lfm-2.5-2.6b:free', name: 'LiquidAI: LFM 2.5 2.6B (Fast, Free - Recommended)' },
+  { id: 'nvidia/nemotron-3.5-lightning:free', name: 'NVIDIA: Nemotron 3.5 Lightning (Free)' },
+  { id: 'google/gemma-4-26b-a4b-it:free', name: 'Google: Gemma 4 26B (Free)' },
+  { id: 'qwen/qwen3.8-27b:free', name: 'Qwen 3.8 27B (Free)' },
   { id: 'deepseek/deepseek-r1:free', name: 'DeepSeek R1 (Free)' },
-  { id: 'meta-llama/llama-3.3-70b-instruct:free', name: 'Llama 3.3 70B Instruct (Free)' },
-  { id: 'qwen/qwen-2.5-coder-32b-instruct:free', name: 'Qwen 2.5 Coder 32B (Free)' },
   { id: 'mistralai/mistral-7b-instruct:free', name: 'Mistral 7B Instruct (Free)' },
 ];
 
@@ -23,7 +23,7 @@ export class OpenRouterProvider implements IVocabularyProvider {
     const model =
       options?.openrouterModel ||
       (import.meta as any).env?.VITE_OPENROUTER_MODEL ||
-      'google/gemini-2.0-flash-thinking-exp:free';
+      'liquid/lfm-2.5-2.6b:free';
 
     if (!apiKey) {
       throw new Error('OpenRouter API key is missing. Add your free key in Settings.');
@@ -55,10 +55,11 @@ JSON format:
       const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
           Authorization: `Bearer ${apiKey}`,
           'HTTP-Referer': 'https://lexicon-vocab.app',
-          'X-Title': 'Lexicon Spaced Repetition Vocabulary',
+          'X-OpenRouter-Title': 'Lexicon Vocabulary',
+          'X-Title': 'Lexicon Vocabulary',
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           model,
