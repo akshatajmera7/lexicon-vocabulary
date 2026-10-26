@@ -1,10 +1,11 @@
 import { Word, WordProgress } from '../types/database';
-import { DEFAULT_USER_ID } from '../services/supabaseClient';
+
+export const SEED_USER_ID = '00000000-0000-0000-0000-000000000001';
 
 export const COMPREHENSIVE_SEED_WORDS: Word[] = [
   {
     "id": "a1111111-1111-1111-1111-111111111111",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "ephemeral",
     "normalized_word": "ephemeral",
     "simple_meaning": "Lasting for a very short time",
@@ -28,12 +29,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Frequently used in literature and philosophy to describe brief experiences, art, or emotions.",
     "memory_tip": "Think of \"ephemera\" — things like concert tickets or autumn leaves that are brief and quickly fade.",
-    "created_at": "2026-10-24T07:10:39.788Z",
-    "updated_at": "2026-10-24T07:10:39.789Z"
+    "created_at": "2026-10-24T07:18:29.154Z",
+    "updated_at": "2026-10-24T07:18:29.156Z"
   },
   {
     "id": "a2222222-2222-2222-2222-222222222222",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "pragmatic",
     "normalized_word": "pragmatic",
     "simple_meaning": "Dealing with things sensibly and realistically based on practical considerations",
@@ -56,12 +57,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Used in business, politics, and decision making where practical utility beats theoretical idealism.",
     "memory_tip": "Rhymes with \"automatic\" — think of solving problems with practical tools right in front of you.",
-    "created_at": "2026-10-24T07:10:39.789Z",
-    "updated_at": "2026-10-24T07:10:39.789Z"
+    "created_at": "2026-10-24T07:18:29.156Z",
+    "updated_at": "2026-10-24T07:18:29.156Z"
   },
   {
     "id": "a3333333-3333-3333-3333-333333333333",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "ubiquitous",
     "normalized_word": "ubiquitous",
     "simple_meaning": "Present, appearing, or found everywhere",
@@ -85,12 +86,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Used to describe technology, cultural trends, or natural phenomena that are pervasive.",
     "memory_tip": "Sounds like \"you-be-everywhere\" — something found at every corner you look.",
-    "created_at": "2026-10-25T07:10:39.789Z",
-    "updated_at": "2026-10-25T07:10:39.789Z"
+    "created_at": "2026-10-25T07:18:29.156Z",
+    "updated_at": "2026-10-25T07:18:29.156Z"
   },
   {
     "id": "a4444444-4444-4444-4444-444444444444",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "tenacious",
     "normalized_word": "tenacious",
     "simple_meaning": "Tending to keep a firm hold of something; persistent and determined",
@@ -114,12 +115,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Complimenting someone who never gives up on a tough objective.",
     "memory_tip": "Tenacious people hold on with \"tenacity\" like the grip of ten fingers.",
-    "created_at": "2026-10-25T07:10:39.789Z",
-    "updated_at": "2026-10-25T07:10:39.789Z"
+    "created_at": "2026-10-25T07:18:29.156Z",
+    "updated_at": "2026-10-25T07:18:29.156Z"
   },
   {
     "id": "a5555555-5555-5555-5555-555555555555",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "serendipity",
     "normalized_word": "serendipity",
     "simple_meaning": "The occurrence of events by chance in a happy or beneficial way",
@@ -142,12 +143,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Used when celebrating pleasant surprises and unintended discoveries.",
     "memory_tip": "Think of \"serene dip\" — taking a calm dip into life and stumbling upon unexpected treasure.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000001-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Ricochet",
     "normalized_word": "ricochet",
     "simple_meaning": "To rebound or bounce off a surface at an angle",
@@ -171,12 +172,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Common in ballistics, sports, physics, and figurative descriptions of ideas jumping around.",
     "memory_tip": "Sounds like \"trick-o-shade\" — an energetic ball bouncing into the shade.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000002-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Dainty",
     "normalized_word": "dainty",
     "simple_meaning": "Delicately small, graceful, or pretty",
@@ -200,12 +201,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Often used to describe teaware, pastries, jewelry, or light, refined footsteps.",
     "memory_tip": "Rhymes with \"rainy\" — imagine delicate raindrops falling on tiny flowers.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000003-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Despair",
     "normalized_word": "despair",
     "simple_meaning": "The complete loss or absence of hope",
@@ -229,12 +230,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Literature, emotional dialogues, and psychological descriptions of grief.",
     "memory_tip": "De-pair: feeling separated and torn away from all reasons for hope.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000004-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Despise",
     "normalized_word": "despise",
     "simple_meaning": "To feel intense contempt or deep dislike for someone or something",
@@ -258,12 +259,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Expressing fierce disapproval, moral contempt, or personal aversion.",
     "memory_tip": "Des- + spice: hating something so much you feel like throwing rotten spice at it.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000005-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Appeasement",
     "normalized_word": "appeasement",
     "simple_meaning": "Pacifying or placating someone by giving in to their demands",
@@ -287,12 +288,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Historical and diplomatic discussions, especially concerning negotiations before major conflicts.",
     "memory_tip": "Appease = bring peace by yielding to a bully.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000006-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Silhouette",
     "normalized_word": "silhouette",
     "simple_meaning": "The dark outline or shadow of someone or something against a light background",
@@ -316,12 +317,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Photography, graphic design, art, and romantic nocturnal descriptions.",
     "memory_tip": "Named after Étienne de Silhouette, an 18th-century French finance minister who made inexpensive shadow portraits.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000007-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Bruises",
     "normalized_word": "bruises",
     "simple_meaning": "Dark marks on the skin caused by blood leaking from damaged capillaries",
@@ -343,12 +344,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Medical, athletic, and physical recovery contexts.",
     "memory_tip": "Blue-ish bruises appear after you lose your balance.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000008-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Resuscitate",
     "normalized_word": "resuscitate",
     "simple_meaning": "To revive someone from unconsciousness, near-death, or inactivity",
@@ -372,12 +373,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "hard",
     "usage_context": "Emergency medicine, first-aid training, and corporate turnaround discussions.",
     "memory_tip": "Re-sus-citate: bringing someone back to a sustainable state of breath.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000009-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Frantic",
     "normalized_word": "frantic",
     "simple_meaning": "Wild with fear, anxiety, or uncontrolled activity",
@@ -401,12 +402,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "High-stress emergencies, deadline crunches, and sudden chaos.",
     "memory_tip": "Sounds like \"frenetic\" — fast and full of panic.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000010-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Fortuitous",
     "normalized_word": "fortuitous",
     "simple_meaning": "Happening by a lucky chance rather than by intention",
@@ -430,12 +431,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "hard",
     "usage_context": "Formal writing, narrative discoveries, and professional success stories.",
     "memory_tip": "Fortuitous shares the root of \"fortune\" — good luck happening by chance.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000011-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Insistent",
     "normalized_word": "insistent",
     "simple_meaning": "Demanding something forcefully and refusing to give up",
@@ -459,12 +460,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Negotiations, persuasive debates, and recurring sounds or demands.",
     "memory_tip": "In-sistent: someone who will stand inside and not leave until they get what they want.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000012-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Vengeance",
     "normalized_word": "vengeance",
     "simple_meaning": "Punishment or retaliation inflicted in return for an injury or wrongdoing",
@@ -488,12 +489,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Action movies, epic tragedies, legal debates on retributive justice.",
     "memory_tip": "Vengeance is seeking re-venge with passion.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000013-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Clamour",
     "normalized_word": "clamour",
     "simple_meaning": "A loud and confused noise, especially of people shouting",
@@ -517,12 +518,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Political rallies, bustling trading floors, and passionate crowds.",
     "memory_tip": "Clamour sounds like \"slammer\" — loud noise that bangs like slamming doors.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000014-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Juvenile",
     "normalized_word": "juvenile",
     "simple_meaning": "Relating to young people; immature or childish",
@@ -546,12 +547,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Legal terms (juvenile court), psychology, and behavioral criticism.",
     "memory_tip": "Related to \"rejuvenate\" (make young again); juvenile means young or acting young.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000015-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Psoriasis",
     "normalized_word": "psoriasis",
     "simple_meaning": "A chronic skin disease marked by red, itchy, scaly patches",
@@ -571,12 +572,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "hard",
     "usage_context": "Dermatology, medical consultations, and chronic healthcare discussions.",
     "memory_tip": "Silent P at the beginning: think of \"sore eyes is\" — sore patches on the skin.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000016-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Melancholy",
     "normalized_word": "melancholy",
     "simple_meaning": "A deep, pensive, and long-lasting sadness",
@@ -600,12 +601,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Classic literature, music reviews, and emotional memoirs.",
     "memory_tip": "Ancient Greek \"melas\" (black) + \"chole\" (bile) — the historic belief that dark melancholy was black bile.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000017-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Triumphant",
     "normalized_word": "triumphant",
     "simple_meaning": "Having won a battle, contest, or goal; feeling celebratory joy",
@@ -629,12 +630,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Athletics, military achievements, political victories, and milestone celebrations.",
     "memory_tip": "Triumph + ant: a marching army of winners celebrating victory.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000018-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Begrudgingly",
     "normalized_word": "begrudgingly",
     "simple_meaning": "Reluctantly or with hidden resentment",
@@ -658,12 +659,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Admitting mistakes, giving credit to competitors, or completing unpleasant obligations.",
     "memory_tip": "Holding a \"grudge\" while doing something you do not want to do.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000019-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Contort",
     "normalized_word": "contort",
     "simple_meaning": "To twist or bend out of its normal shape",
@@ -687,12 +688,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Acrobatics, facial expressions in intense pain, and twisted rhetorical arguments.",
     "memory_tip": "Like a \"contortionist\" bending into impossible geometric shapes.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000020-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Sullen",
     "normalized_word": "sullen",
     "simple_meaning": "Bad-tempered, gloomy, and sulky",
@@ -716,12 +717,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Interpersonal disputes, moody characters in novels, and heavy overcast weather.",
     "memory_tip": "Sullen sounds like \"sulking alone in a corner\".",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000021-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Comrade",
     "normalized_word": "comrade",
     "simple_meaning": "A close companion, fellow member, or ally in struggle",
@@ -745,12 +746,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Military fraternities, labor unions, historical movements, and deep brotherhoods.",
     "memory_tip": "Spanish \"camarada\" (roommate) — someone sharing quarters and battles with you.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000022-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Marred",
     "normalized_word": "marred",
     "simple_meaning": "Damaged, spoiled, or impaired in appearance or perfection",
@@ -774,12 +775,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Art critiques, aesthetic reviews, and recounting events spoiled by a blunder.",
     "memory_tip": "Marred sounds like \"scarred\" — a scar that ruins a pristine surface.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000023-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Cacophony",
     "normalized_word": "cacophony",
     "simple_meaning": "A harsh, jarring mixture of unpleasant sounds",
@@ -803,12 +804,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Urban noise, chaotic orchestras, or overlapping arguments.",
     "memory_tip": "Greek \"kakos\" (bad) + \"phone\" (sound) = bad sound.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000024-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Sordid",
     "normalized_word": "sordid",
     "simple_meaning": "Involving dishonorable actions and motives; dirty and squalid",
@@ -832,12 +833,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Political scandals, crime noir novels, and urban poverty critiques.",
     "memory_tip": "Sounds like \"soiled\" — morally and physically dirty.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000025-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Shriek",
     "normalized_word": "shriek",
     "simple_meaning": "To make a high-pitched, piercing cry or sound",
@@ -861,12 +862,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Suspense fiction, spooky encounters, rollercoasters, and sudden shocks.",
     "memory_tip": "Sounds like Shrek shouting in a high pitch when scared.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000026-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Knackered",
     "normalized_word": "knackered",
     "simple_meaning": "Extremely tired, exhausted, or worn out",
@@ -890,12 +891,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "British, Irish, and Australian informal speech after long shifts or workouts.",
     "memory_tip": "Historically from the knacker who bought old, worn-out workhorses.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000027-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Lug",
     "normalized_word": "lug",
     "simple_meaning": "To carry or drag something heavy with great effort",
@@ -918,12 +919,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Moving furniture, airport luggage, and physical labor.",
     "memory_tip": "Lug is the root of \"luggage\" — the heavy bags you have to lug around.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000028-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Scrawny",
     "normalized_word": "scrawny",
     "simple_meaning": "Unattractively thin, skinny, and bony",
@@ -947,12 +948,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Describing emaciated animals, lanky teenagers, or weathered limbs.",
     "memory_tip": "Scrawny things look like raw dry twigs scratching in the wind.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000029-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Grotesques",
     "normalized_word": "grotesques",
     "simple_meaning": "Comically or repulsively distorted figures or art forms",
@@ -975,12 +976,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Gothic architecture, art history, literature exploring uncanny distortions.",
     "memory_tip": "Originated from Italian \"grottesco\" (paintings found in the Roman caves/grottoes).",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000030-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Retort",
     "normalized_word": "retort",
     "simple_meaning": "A sharp, witty, or angry quick reply",
@@ -1003,12 +1004,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Debates, courtroom dramas, and witty repartee between characters.",
     "memory_tip": "Re- (back) + tort (twist): twisting the comment right back at the speaker.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000031-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Houndstooth",
     "normalized_word": "houndstooth",
     "simple_meaning": "A duotone textile pattern of broken or jagged checks",
@@ -1029,12 +1030,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Fashion design, vintage tailoring, and luxury woolen coats.",
     "memory_tip": "The jagged checks literally resemble the sharp teeth of a hound dog.",
-    "created_at": "2026-10-26T07:10:39.789Z",
-    "updated_at": "2026-10-26T07:10:39.789Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000032-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Kerb",
     "normalized_word": "kerb",
     "simple_meaning": "The stone edge separating a street from the sidewalk",
@@ -1056,12 +1057,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "British and Commonwealth English for streetscapes, parking, and urban walking.",
     "memory_tip": "Kerb with a K is the British road edge; curb with a C is used both for restraining impulses and the American street curb.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000033-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Splay",
     "normalized_word": "splay",
     "simple_meaning": "To spread out wide or turn outward clumsily",
@@ -1085,12 +1086,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Body mechanics, architecture (splayed windows), and animal defense postures.",
     "memory_tip": "Splay sounds like \"spread and play\" out flat.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000034-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Ridicule",
     "normalized_word": "ridicule",
     "simple_meaning": "Mockery or derision aimed at making someone look ridiculous",
@@ -1114,12 +1115,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Social criticism, satire, and bullying dynamics.",
     "memory_tip": "Related to \"ridiculous\" — treating something as purely ridiculous.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000035-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Usurper",
     "normalized_word": "usurper",
     "simple_meaning": "A person who takes power, office, or property unlawfully",
@@ -1142,12 +1143,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "hard",
     "usage_context": "Historical chronicles, medieval fantasy sagas, and political coups.",
     "memory_tip": "Usurp + er = one who uses unearned force to steal a throne.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000036-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Cajole",
     "normalized_word": "cajole",
     "simple_meaning": "To persuade someone to do something through gentle flattery or soothing words",
@@ -1171,12 +1172,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "hard",
     "usage_context": "Interpersonal diplomacy, parenting tactics, and persuasive sales negotiation.",
     "memory_tip": "Cajole like feeding \"cajun jelly\" — smooth, sweet, and irresistible.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000037-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Masquerading",
     "normalized_word": "masquerading",
     "simple_meaning": "Pretending to be someone or something one is not",
@@ -1199,12 +1200,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Cybersecurity attacks, spy fiction, and social imposters.",
     "memory_tip": "Mask + parade: wearing a mask in the public parade to hide identity.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000038-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Formidable",
     "normalized_word": "formidable",
     "simple_meaning": "Inspiring fear, admiration, or respect through being impressively large or capable",
@@ -1228,12 +1229,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "High-stakes competition, complex challenges, and commanding leaders.",
     "memory_tip": "From Latin \"formido\" (terror) — possessing great ability that frightens rivals.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000039-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Whimpering",
     "normalized_word": "whimpering",
     "simple_meaning": "Making low, feeble sounds expressive of fear, pain, or discontent",
@@ -1257,12 +1258,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Children, injured animals, and characters expressing quiet terror.",
     "memory_tip": "A \"wimp\" whimpers when facing minor distress.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000040-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Guffaw",
     "normalized_word": "guffaw",
     "simple_meaning": "A loud, hearty, and boisterous burst of laughter",
@@ -1286,12 +1287,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Comedy clubs, friendly tavern banter, and jovial family gatherings.",
     "memory_tip": "Onomatopoeic: say \"GUH-FAW!\" and it sounds like a sudden belly laugh.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000041-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Trudge",
     "normalized_word": "trudge",
     "simple_meaning": "To walk slowly and with heavy steps, typically from exhaustion or harsh terrain",
@@ -1315,12 +1316,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Extreme weather journeys, military marches, and walking home after exhausting shifts.",
     "memory_tip": "Sounds like \"mud + sludge\" — walking through deep sludge.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000042-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Pram",
     "normalized_word": "pram",
     "simple_meaning": "A four-wheeled carriage for a baby pushed by a person walking",
@@ -1339,12 +1340,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "British parenting, park walks, and family life.",
     "memory_tip": "PRAM comes from perambulate (to walk around).",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000043-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Promenade",
     "normalized_word": "promenade",
     "simple_meaning": "A paved public walk, typically along a waterfront",
@@ -1363,12 +1364,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Coastal tourism, 19th-century high-society walks, and architecture.",
     "memory_tip": "Related to \"prom\" (the grand formal high-school promenade dance).",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000044-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Cataclysm",
     "normalized_word": "cataclysm",
     "simple_meaning": "A large-scale and violent event in the natural world or society",
@@ -1392,12 +1393,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "hard",
     "usage_context": "Geology, environmental crises, and catastrophic historical collapses.",
     "memory_tip": "Greek \"kataklysmos\" (deluge / flood) — a deluge so huge it breaks everything.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000045-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Leper",
     "normalized_word": "leper",
     "simple_meaning": "A person afflicted with leprosy; figuratively, an outcast shunned by society",
@@ -1421,12 +1422,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Historical medical studies, biblical literature, and social exile metaphors.",
     "memory_tip": "Leper = pariah left outside the colony.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000046-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Satchel",
     "normalized_word": "satchel",
     "simple_meaning": "A bag with a shoulder strap used for carrying books and personal items",
@@ -1445,12 +1446,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Vintage academia, messenger gear, and classic school stories.",
     "memory_tip": "Think of a sack strapped across your chest: sack + latch = satchel.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000047-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Horace",
     "normalized_word": "horace",
     "simple_meaning": "Renowned ancient Roman lyric poet; symbol of classical wit and \"carpe diem\"",
@@ -1468,12 +1469,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "hard",
     "usage_context": "Classical literature, poetic philosophy, and academic humanities discussions.",
     "memory_tip": "Horace coined \"carpe diem\" — seize the hour (hora).",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000048-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Nymphs",
     "normalized_word": "nymphs",
     "simple_meaning": "Mythological nature spirits; or immature stages of insects",
@@ -1492,12 +1493,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Classical mythology, fantasy lore, and entomology (dragonfly nymphs).",
     "memory_tip": "Nymphs dance near nature springs.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000049-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Pagan",
     "normalized_word": "pagan",
     "simple_meaning": "A follower of polytheistic or nature-based spiritual traditions",
@@ -1519,12 +1520,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Anthropology, ancient European history, and seasonal solstice celebrations.",
     "memory_tip": "From Latin \"paganus\" (country dweller) who kept ancient nature rites.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000050-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Pallid",
     "normalized_word": "pallid",
     "simple_meaning": "Pale, typically because of poor health or shock",
@@ -1548,12 +1549,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Medical condition descriptions, Victorian gothic horror, and literary character portraits.",
     "memory_tip": "Pallid shares root with \"pale\" — so pale it looks white like plaster.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000051-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Immaculate",
     "normalized_word": "immaculate",
     "simple_meaning": "Perfectly clean, neat, or pure; free from flaws",
@@ -1577,12 +1578,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Interior design, formal military inspections, sports technique, and ethics.",
     "memory_tip": "Im- (not) + macula (stain) = completely free from any stain or dirt.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000052-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Triumph",
     "normalized_word": "triumph",
     "simple_meaning": "A great victory, achievement, or milestone celebration",
@@ -1606,12 +1607,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Scientific breakthroughs, athletic championships, and historical battles.",
     "memory_tip": "Ancient Roman triumph parades were held for victorious generals returning home.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000053-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Tepee",
     "normalized_word": "tepee",
     "simple_meaning": "A portable conical tent traditionally made of animal skins and wooden poles",
@@ -1630,12 +1631,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Native American history, anthropology, and traditional architecture.",
     "memory_tip": "Dakota/Lakota word \"thípi\" meaning \"a dwelling or place to live\".",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000054-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Muster",
     "normalized_word": "muster",
     "simple_meaning": "To assemble or gather up (forces, courage, or energy)",
@@ -1659,12 +1660,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Military troop roll calls, rallying team strength, and summoning inner resolve.",
     "memory_tip": "Muster up the courage before you face the monster.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000055-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Detested",
     "normalized_word": "detested",
     "simple_meaning": "Intensely hated and abhorred",
@@ -1688,12 +1689,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Tyrants, corrupt policies, bitter rivalries, and despised villains.",
     "memory_tip": "Detest + ed = hated so much you cannot stand the test of their presence.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000056-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Malocclusion",
     "normalized_word": "malocclusion",
     "simple_meaning": "Imperfect positioning of the teeth when the jaws are closed",
@@ -1715,12 +1716,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "hard",
     "usage_context": "Dentistry, orthodontics, oral surgery, and dental anatomy.",
     "memory_tip": "Mal- (bad) + occlusion (closing) = bad closing of teeth.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000057-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Trepidation",
     "normalized_word": "trepidation",
     "simple_meaning": "A feeling of fear, agitation, or dread about something that may happen",
@@ -1744,12 +1745,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "hard",
     "usage_context": "Gothic literature, scary challenges, and nervous anticipation before major tests.",
     "memory_tip": "Trepidation makes your hands \"tremble\".",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000058-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Feign",
     "normalized_word": "feign",
     "simple_meaning": "To pretend to be affected by a feeling, state, or injury",
@@ -1772,12 +1773,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Acting, sports feints, pretending illness, and political diplomacy.",
     "memory_tip": "Feign rhymes with \"fake rain\" — creating a false impression.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000059-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Extenuating",
     "normalized_word": "extenuating",
     "simple_meaning": "Serving to lessen the seriousness of an offense or mistake",
@@ -1800,12 +1801,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "hard",
     "usage_context": "Courtroom proceedings, judicial sentencing, and academic appeal policies.",
     "memory_tip": "Extenuating \"extends\" an excuse to lessen the blame.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000060-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Apprenticeship",
     "normalized_word": "apprenticeship",
     "simple_meaning": "A period of learning a craft or trade under a skilled master",
@@ -1827,12 +1828,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Skilled trades, vocational education, craftsmanship, and historic guilds.",
     "memory_tip": "Apprentice learns from the master to reach workmanship.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000061-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Gunge",
     "normalized_word": "gunge",
     "simple_meaning": "An unpleasantly sticky, slimy, or messy substance",
@@ -1854,12 +1855,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "British informal speech, children’s TV shows with slime tanks, and mechanics.",
     "memory_tip": "Goo + grunge = gunge.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.156Z"
   },
   {
     "id": "b0000062-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Squeamishness",
     "normalized_word": "squeamishness",
     "simple_meaning": "Easily made sick, disgusted, or shocked by sights like blood",
@@ -1882,12 +1883,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "First-aid training, horror movies, dissection labs, and food disgust.",
     "memory_tip": "When you feel squeamish, your stomach makes a \"squeak\" of queasiness.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.156Z",
+    "updated_at": "2026-10-26T07:18:29.157Z"
   },
   {
     "id": "b0000063-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Congregation",
     "normalized_word": "congregation",
     "simple_meaning": "A gathering or assembly of people, especially for religious worship",
@@ -1910,12 +1911,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Religious services, community worship, and collective spiritual ceremonies.",
     "memory_tip": "Con- (together) + grex (flock): gathering the flock together.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.157Z",
+    "updated_at": "2026-10-26T07:18:29.157Z"
   },
   {
     "id": "b0000064-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Fervent",
     "normalized_word": "fervent",
     "simple_meaning": "Having or displaying passionate, intense enthusiasm or feeling",
@@ -1939,12 +1940,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Political speeches, romantic declarations, religious devotion, and activism.",
     "memory_tip": "Fervent relates to \"fever\" — an intense, burning heat of emotion.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.157Z",
+    "updated_at": "2026-10-26T07:18:29.157Z"
   },
   {
     "id": "b0000065-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Ultracrepidarian",
     "normalized_word": "ultracrepidarian",
     "simple_meaning": "A person who expresses opinions on matters outside their knowledge",
@@ -1967,12 +1968,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "hard",
     "usage_context": "Intellectual critiques of commentators speaking outside their discipline.",
     "memory_tip": "From painter Apelles telling a cobbler who criticized a painted tunic: \"Ne supra crepidam sutor iudicaret\" (A shoemaker should not judge above the sandal).",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.157Z",
+    "updated_at": "2026-10-26T07:18:29.157Z"
   },
   {
     "id": "b0000066-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Snollygoster",
     "normalized_word": "snollygoster",
     "simple_meaning": "A shrewd, unprincipled person, especially a dishonest politician",
@@ -1995,12 +1996,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "hard",
     "usage_context": "19th-century American political satire, humorous critiques of hypocritical figures.",
     "memory_tip": "Popularized by 1890s American editor who defined it: \"a fellow who wants office regardless of party, platform, or principle\".",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.157Z",
+    "updated_at": "2026-10-26T07:18:29.157Z"
   },
   {
     "id": "b0000067-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Pettifogger",
     "normalized_word": "pettifogger",
     "simple_meaning": "An inferior, shifty lawyer who quibbles over trivialities",
@@ -2022,12 +2023,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "hard",
     "usage_context": "Legal satire, literary depictions of manipulative barristers, and corporate contract disputes.",
     "memory_tip": "Petty (small/trivial) + fogger (obscuring clarity with petty legal smoke).",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.157Z",
+    "updated_at": "2026-10-26T07:18:29.157Z"
   },
   {
     "id": "b0000068-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Blatherskite",
     "normalized_word": "blatherskite",
     "simple_meaning": "A person who talks foolishly and at great length",
@@ -2049,12 +2050,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "hard",
     "usage_context": "Colloquial Scottish and American humor, exasperated political commentary.",
     "memory_tip": "Blather (to babble nonsense) + skate: a person skating through endless meaningless talk.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.157Z",
+    "updated_at": "2026-10-26T07:18:29.157Z"
   },
   {
     "id": "b0000069-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Gobemouche",
     "normalized_word": "gobemouche",
     "simple_meaning": "A gullible person who swallows any rumor or tall tale",
@@ -2077,12 +2078,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "hard",
     "usage_context": "Satirical literary critiques of credulity and media manipulation.",
     "memory_tip": "From French \"gober\" (to gulp) + \"mouche\" (fly) — standing with mouth open so wide you swallow flies.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.157Z",
+    "updated_at": "2026-10-26T07:18:29.157Z"
   },
   {
     "id": "b0000070-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Enticing",
     "normalized_word": "enticing",
     "simple_meaning": "Attractive, tempting, or alluring",
@@ -2106,12 +2107,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Food reviews, luxury marketing, travel advertisements, and job offers.",
     "memory_tip": "Enticing puts you \"in ice-cream\" heaven — tempting you to indulge.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.157Z",
+    "updated_at": "2026-10-26T07:18:29.157Z"
   },
   {
     "id": "b0000071-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Casserole",
     "normalized_word": "casserole",
     "simple_meaning": "A one-dish meal baked slowly in a deep ovenproof dish",
@@ -2130,12 +2131,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Comfort food cooking, family potlucks, and culinary recipes.",
     "memory_tip": "French \"casse\" (pan) — everything baked together harmoniously in one dish.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.157Z",
+    "updated_at": "2026-10-26T07:18:29.157Z"
   },
   {
     "id": "b0000072-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Threadbare",
     "normalized_word": "threadbare",
     "simple_meaning": "Worn down so much that the threads show; ragged or overused",
@@ -2159,12 +2160,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Describing antique upholstery, vintage clothes, or cliché arguments.",
     "memory_tip": "The threads are bare because the soft top fabric has rubbed away completely.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.157Z",
+    "updated_at": "2026-10-26T07:18:29.157Z"
   },
   {
     "id": "b0000073-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Tor",
     "normalized_word": "tor",
     "simple_meaning": "A high, rocky hill or prominent stone outcrop",
@@ -2187,12 +2188,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "hard",
     "usage_context": "British geography (Dartmoor and Yorkshire Dales), hiking memoirs, and fantasy settings.",
     "memory_tip": "Short and towering: a tor towers over the moor.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.157Z",
+    "updated_at": "2026-10-26T07:18:29.157Z"
   },
   {
     "id": "b0000074-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Dilapidated",
     "normalized_word": "dilapidated",
     "simple_meaning": "In a state of disrepair or ruin as a result of age or neglect",
@@ -2216,12 +2217,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Real estate renovation, haunted house descriptions, and historic ruins.",
     "memory_tip": "Latin \"di-\" (apart) + \"lapis\" (stone): stones falling apart one by one.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.157Z",
+    "updated_at": "2026-10-26T07:18:29.157Z"
   },
   {
     "id": "b0000075-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Resurrect",
     "normalized_word": "resurrect",
     "simple_meaning": "To bring back to life or revive from obscurity",
@@ -2245,12 +2246,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Theology, creative revivals of discontinued brands, and reviving old traditions.",
     "memory_tip": "Re- (again) + surge: surging back to life.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.157Z",
+    "updated_at": "2026-10-26T07:18:29.157Z"
   },
   {
     "id": "b0000076-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Blasphemy",
     "normalized_word": "blasphemy",
     "simple_meaning": "The act of speaking sacrilegiously about God or sacred things",
@@ -2274,12 +2275,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Religious history, freedom of speech jurisprudence, and figurative indignation.",
     "memory_tip": "Greek \"blaptein\" (to harm) + \"pheme\" (speech) = harmful or insulting speech.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.157Z",
+    "updated_at": "2026-10-26T07:18:29.157Z"
   },
   {
     "id": "b0000077-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Clandestine",
     "normalized_word": "clandestine",
     "simple_meaning": "Kept secret or done secretly, especially because illicit",
@@ -2303,12 +2304,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "hard",
     "usage_context": "Espionage, covert military operations, forbidden romances, and undercover stings.",
     "memory_tip": "Plan with your \"clan\" behind closed doors.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.157Z",
+    "updated_at": "2026-10-26T07:18:29.157Z"
   },
   {
     "id": "b0000078-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Mangy",
     "normalized_word": "mangy",
     "simple_meaning": "Shabby, scruffy, or suffering from mange (skin disease in animals)",
@@ -2332,12 +2333,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Animal health, gritty urban descriptions, and derogatory characterization.",
     "memory_tip": "Mange is the disease that makes coats lose patches of fur.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.157Z",
+    "updated_at": "2026-10-26T07:18:29.157Z"
   },
   {
     "id": "b0000079-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Titter",
     "normalized_word": "titter",
     "simple_meaning": "To give a short, half-suppressed laugh or nervous giggle",
@@ -2360,12 +2361,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Classrooms, awkward social gatherings, and aristocratic drawing rooms.",
     "memory_tip": "A tiny \"tit-tit-tit\" nervous laugh.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.157Z",
+    "updated_at": "2026-10-26T07:18:29.157Z"
   },
   {
     "id": "b0000080-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Spreadeagle",
     "normalized_word": "spreadeagle",
     "simple_meaning": "To stretch out with arms and legs extended wide",
@@ -2387,12 +2388,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Athletics, emergency pat-downs, and relaxing lazily on a beach or floor.",
     "memory_tip": "Spread out your arms and legs like an eagle soaring wide.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.157Z",
+    "updated_at": "2026-10-26T07:18:29.157Z"
   },
   {
     "id": "b0000081-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Grumpy",
     "normalized_word": "grumpy",
     "simple_meaning": "Bad-tempered and easily irritated",
@@ -2416,12 +2417,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Morning moods, cranky elderly neighbors, and humorous character archetypes.",
     "memory_tip": "Think of Grumpy the dwarf from Snow White, arms crossed and scowling.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.157Z",
+    "updated_at": "2026-10-26T07:18:29.157Z"
   },
   {
     "id": "b0000082-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Strife",
     "normalized_word": "strife",
     "simple_meaning": "Angry or bitter disagreement; conflict or contention",
@@ -2445,12 +2446,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "medium",
     "usage_context": "Political instability, civil wars, and bitter interpersonal disputes.",
     "memory_tip": "Strive without harmony leads to strife.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.157Z",
+    "updated_at": "2026-10-26T07:18:29.157Z"
   },
   {
     "id": "b0000083-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Sham",
     "normalized_word": "sham",
     "simple_meaning": "A thing that is not what it is purported to be; a bogus imitation or fraud",
@@ -2473,12 +2474,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Exposing scams, political illusions, and bogus products.",
     "memory_tip": "Shame on those who pull off a sham!",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.157Z",
+    "updated_at": "2026-10-26T07:18:29.157Z"
   },
   {
     "id": "b0000084-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Pews",
     "normalized_word": "pews",
     "simple_meaning": "Long wooden benches with backs used for seating in churches",
@@ -2496,12 +2497,12 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Ecclesiastical architecture, weddings, Sunday services, and historic buildings.",
     "memory_tip": "People sit in pews to pray.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.157Z",
+    "updated_at": "2026-10-26T07:18:29.157Z"
   },
   {
     "id": "b0000085-0000-0000-0000-000000000000",
-    "user_id": DEFAULT_USER_ID,
+    "user_id": SEED_USER_ID,
     "word": "Cavern",
     "normalized_word": "cavern",
     "simple_meaning": "A very large or underground cave",
@@ -2520,8 +2521,8 @@ export const COMPREHENSIVE_SEED_WORDS: Word[] = [
     "difficulty": "easy",
     "usage_context": "Speleology, adventure fantasy, and geological wonders.",
     "memory_tip": "A cavern is an enormous cave that caverns deep into the earth.",
-    "created_at": "2026-10-26T07:10:39.790Z",
-    "updated_at": "2026-10-26T07:10:39.790Z"
+    "created_at": "2026-10-26T07:18:29.157Z",
+    "updated_at": "2026-10-26T07:18:29.157Z"
   }
 ];
 
@@ -2533,7 +2534,7 @@ export const COMPREHENSIVE_SEED_PROGRESS: WordProgress[] = COMPREHENSIVE_SEED_WO
   return {
     id: `p${w.id.slice(1)}`,
     word_id: w.id,
-    user_id: DEFAULT_USER_ID,
+    user_id: SEED_USER_ID,
     status: isMastered ? 'mastered' : isLearned ? 'learned' : 'learning',
     learning_stage: isMastered ? 'mastered' : isLearned ? 'reviewing' : 'new',
     repetition_count: isMastered ? 4 : isLearned ? 2 : 0,
