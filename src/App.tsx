@@ -125,7 +125,30 @@ export function App() {
         )}
       </main>
 
-      {/* Mobile Bottom Tab Bar */}
+      {/* Responsive Footer */}
+      <footer className="app-footer">
+        <div className="app-footer-inner">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+            <span style={{ fontWeight: 800, color: 'var(--text-primary)' }}>Lexicon</span>
+            <span style={{ color: 'var(--text-muted)' }}>•</span>
+            <span>Spaced Repetition Vocabulary</span>
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+            <span style={{ color: 'var(--emerald-accent)', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--emerald-accent)' }} />
+              Supabase Connected
+            </span>
+            <span style={{ color: 'var(--amber-glow)', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--amber-glow)' }} />
+              Gemini 3 Flash AI
+            </span>
+            <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>
+              {vocabularyHook.stats.totalWords} words stored
+            </span>
+          </div>
+        </div>
+      </footer>
       <MobileTabBar
         activeTab={activeTab}
         setActiveTab={(tab) => {

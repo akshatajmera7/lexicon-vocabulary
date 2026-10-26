@@ -31,8 +31,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       {/* Streak Hero Banner */}
       <div className="streak-hero-banner">
         <div className="streak-hero-left">
-          <div style={{ width: '36px', height: '36px', borderRadius: 'var(--radius-xs)', background: 'var(--bg-surface-high)', border: '1px solid var(--border-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Flame size={18} color="var(--text-primary)" />
+          <div className="streak-hero-icon-box">
+            <Flame size={22} />
           </div>
           <div>
             <h2 className="streak-hero-title">
@@ -48,8 +48,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
         <div
           style={{
-            padding: '0.35rem 0.65rem',
-            borderRadius: 'var(--radius-xs)',
+            padding: '0.45rem 0.85rem',
+            borderRadius: 'var(--radius-sm)',
             background: 'var(--bg-surface-high)',
             textAlign: 'center',
             border: '1px solid var(--border-subtle)',
@@ -57,10 +57,10 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             fontFamily: 'var(--font-mono)',
           }}
         >
-          <div style={{ fontSize: '0.625rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 700 }}>
-            Best
+          <div style={{ fontSize: '0.625rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em' }}>
+            Best Record
           </div>
-          <div style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--text-primary)' }}>
+          <div style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--amber-glow)' }}>
             {longestStreak}d
           </div>
         </div>
@@ -121,36 +121,61 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       <div className="stats-grid">
         <div className="stat-card">
           <div className="stat-header">
-            <span>Total</span>
-            <BookCheck size={14} color="var(--text-secondary)" />
+            <span>Total Vault</span>
+            <BookCheck size={16} color="var(--amber-glow)" />
           </div>
           <div className="stat-value">{stats.totalWords}</div>
         </div>
 
         <div className="stat-card">
           <div className="stat-header">
-            <span>Learning</span>
-            <Clock size={14} color="var(--text-secondary)" />
+            <span>In Practice</span>
+            <Clock size={16} color="var(--amber-light)" />
           </div>
           <div className="stat-value">{stats.learningCount}</div>
         </div>
 
         <div className="stat-card">
           <div className="stat-header">
-            <span>Learned</span>
-            <CheckCircle2 size={14} color="var(--text-secondary)" />
+            <span>Mastered</span>
+            <CheckCircle2 size={16} color="var(--emerald-accent)" />
           </div>
           <div className="stat-value">{stats.learnedCount}</div>
         </div>
 
         <div className="stat-card">
           <div className="stat-header">
-            <span>Today</span>
-            <Sparkles size={14} color="var(--text-secondary)" />
+            <span>Added Today</span>
+            <Sparkles size={16} color="var(--cyan-accent)" />
           </div>
           <div className="stat-value">{stats.todayAddedCount}</div>
         </div>
       </div>
+
+      {/* Retention Progress Bar Card */}
+      {stats.totalWords > 0 && (
+        <div className="retention-bar-card">
+          <div className="retention-header">
+            <div>
+              <h4 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-primary)' }}>
+                Knowledge Retention Rate
+              </h4>
+              <p style={{ fontSize: '0.78rem', color: 'var(--text-secondary)' }}>
+                {stats.learnedCount} of {stats.totalWords} words retained in long-term memory via spaced repetition
+              </p>
+            </div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '1.25rem', fontWeight: 800, color: 'var(--emerald-accent)' }}>
+              {Math.round((stats.learnedCount / stats.totalWords) * 100)}%
+            </div>
+          </div>
+          <div className="retention-track">
+            <div
+              className="retention-fill"
+              style={{ width: `${Math.max(4, Math.round((stats.learnedCount / stats.totalWords) * 100))}%` }}
+            />
+          </div>
+        </div>
+      )}
 
       {/* Today's Words Section */}
       <div className="glass-card">

@@ -81,9 +81,16 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
       >
         <div>
           <div className="word-card-top">
-            <div className="word-heading">
-              <span>{w.word}</span>
-              {w.part_of_speech && <span className="badge badge-pos">{w.part_of_speech}</span>}
+            <div>
+              <div className="word-heading">
+                <span>{w.word}</span>
+                {w.part_of_speech && <span className="badge badge-pos">{w.part_of_speech}</span>}
+              </div>
+              {(w.phonetic || w.pronunciation) && (
+                <div className="word-card-phonetic">
+                  {w.phonetic || w.pronunciation}
+                </div>
+              )}
             </div>
 
             <button
@@ -99,9 +106,15 @@ export const VocabularyView: React.FC<VocabularyViewProps> = ({
             </button>
           </div>
 
-          <p className="word-card-meaning" style={{ marginTop: '0.6rem' }}>
+          <p className="word-card-meaning" style={{ marginTop: '0.65rem' }}>
             {w.simple_meaning}
           </p>
+
+          {w.example_sentence && (
+            <div className="word-card-example" style={{ marginTop: '0.75rem' }}>
+              "{w.example_sentence}"
+            </div>
+          )}
         </div>
 
         <div className="word-card-footer">
