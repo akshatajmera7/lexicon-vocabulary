@@ -11,7 +11,7 @@ export class GeminiProvider implements IVocabularyProvider {
     }
 
     const normalized = normalizeWord(word);
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+    const candidateModels = ['gemini-3-flash-preview', 'gemini-3.5-flash', 'gemini-flash-latest'];
 
     const prompt = `You are an expert English vocabulary tutor and lexicographer.
 Provide a rich, structured, learner-friendly JSON definition for the word or phrase "${normalized}".
@@ -33,31 +33,35 @@ JSON format:
   "memory_tip": "A clever mnemonic, visual image, or etymological connection to help remember it effortlessly"
 }`;
 
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 12000);
+    let lastError: any = null;
 
-    try {
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: {
-            temperature: 0.2,
-            responseMimeType: 'application/json',
-          },
-        }),
-        signal: controller.signal,
-      });
-      clearTimeout(timeoutId);
+    for (const model of candidateModels) {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 12000);
 
-      if (!response.ok) {
-        const errBody = await response.text();
-        throw new Error(`Gemini API error (${response.status}): ${errBody}`);
-      }
+      try {
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: prompt }] }],
+            generationConfig: {
+              temperature: 0.2,
+              responseMimeType: 'application/json',
+            },
+          }),
+          signal: controller.signal,
+        });
+        clearTimeout(timeoutId);
 
-      const json = await response.json();
-      const rawText = json?.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (!response.ok) {
+          const errBody = await response.text();
+          throw new Error(`Gemini API error (${response.status}) on ${model}: ${errBody}`);
+        }
+
+        const json = await response.json();
+        const rawText = json?.candidates?.[0]?.content?.parts?.[0]?.text;
       if (!rawText) {
         throw new Error('Gemini returned an empty response.');
       }
@@ -86,7 +90,11 @@ JSON format:
       };
     } catch (err: any) {
       clearTimeout(timeoutId);
-      throw err;
+      lastError = err;
+      console.warn(`Gemini model ${model} failed, trying next candidate:`, err.message || err);
     }
+  }
+
+    throw lastError || new Error('All Gemini candidate models failed to respond.');
   }
 }
